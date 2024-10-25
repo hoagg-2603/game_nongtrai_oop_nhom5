@@ -1,22 +1,29 @@
+/*
+	Classes for timer and day/night cycle were found here:
+	http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=9557
+	All art and sounds from
+	https://opengameart.org/
+
+ */
+
+
 package com.mygdx.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
+import com.mygdx.game.screens.MainMenu;
+import com.mygdx.game.screens.PlayScreen;
 
-/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class FarmGame extends Game {
-    private SpriteBatch batch;//doi tuong de ve
-    public static final float UNIT_SCALE = 1/32f;// ty le cac doi tuong trong game
-    public static AssetManager manager;//quan ly tai nguyen
+    public static final float UNIT_SCALE = 1/32f;
+    public SpriteBatch batch;
+    public static AssetManager manager;
 
     @Override
-    public void create() {
+    public void create () {
         batch = new SpriteBatch();
         manager = new AssetManager();
         manager.load("music.mp3", Music.class);
@@ -27,12 +34,12 @@ public class FarmGame extends Game {
     }
 
     @Override
-    public void render() {
+    public void render () {
         super.render();
     }
 
     @Override
-    public void dispose() {
+    public void dispose () {
         batch.dispose();
     }
 }
