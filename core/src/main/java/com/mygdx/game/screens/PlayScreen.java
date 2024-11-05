@@ -331,14 +331,25 @@ public class PlayScreen implements Screen{
             }
 
         }
+
+        //dieu chinh vi tri camera
+        //Cạnh phải của camera không vượt quá ranh giới bên phải của bản đồ:
+        //Cạnh trái của camera không vượt quá ranh giới bên trái của bản đồ:
         if (currentPlayerSprite.getX() + (cam.viewportWidth / 2 * cam.zoom) < mapWidth &&
             currentPlayerSprite.getX() - (cam.viewportWidth / 2 * cam.zoom) > 0)
             cam.position.x = player.getPlayerCenterX();
 
+        //Cạnh trên của camera không vượt quá ranh giới trên của bản đồ:
+        //Cạnh dưới của camera không vượt quá ranh giới dưới của bản đồ:
         if (currentPlayerSprite.getY() + cam.viewportHeight / 2 < mapHeight &&
             currentPlayerSprite.getY() - cam.viewportHeight / 2 > 0)
             cam.position.y = player.getPlayerCenterY();
 
+        /*
+         * isCollision(player.getBoundingBox()): Kiểm tra xem bounding box (hộp bao quanh) của player có xảy ra va chạm với bất kỳ vật thể nào khác trong trò chơi hay không.
+         *  điều kiện if này sẽ đúng khi không có va chạm xảy ra.
+         * player.setCurrentToNext();: Cập nhật vị trí hiện tại của player thành vị trí kế tiếp mà họ muốn di chuyển tới.
+        */
         if (!isCollision(player.getBoundingBox()))
             player.setCurrentToNext();
 
@@ -416,6 +427,7 @@ public class PlayScreen implements Screen{
             game.batch.draw(seeds.get(i).getTexture(), seeds.get(i).getBoundingRect().x, seeds.get(i).getBoundingRect().y);
         }
 
+        // rendering the player and the inventory items on the game screen
         game.batch.draw(currentPlayerFrame, currentPlayerSprite.getX(), currentPlayerSprite.getY());
         //game.batch.draw(mouseFrame, Math.round((coords.x - 16)/32)*32, Math.round((coords.y - 16)/32)*32);
         //game.batch.draw(mouseFrame, coords.x - 16, coords.y -16);
@@ -425,11 +437,11 @@ public class PlayScreen implements Screen{
                 game.batch.draw(items.get(i).getTextureRegion(), (cam.position.x + 32 * i) - (cam.viewportWidth / 2 * (cam.zoom / 2)), cam.position.y - (cam.viewportHeight / 2 * cam.zoom));
                 if(items.get(i).getType() == Items.ItemType.SEED)
                     font.draw(game.batch, String.format("%d", items.get(i).getNum()), (cam.position.x + 32 * i) - (cam.viewportWidth / 2 * (cam.zoom / 2)-6), cam.position.y - (cam.viewportHeight / 2 * cam.zoom)+12);
-                if (items.get(i).getItem() == currentItem.getItem())
+                if(items.get(i).getItem() == currentItem.getItem())
                     game.batch.draw(border, (cam.position.x + 32 * i) - (cam.viewportWidth / 2 * (cam.zoom / 2)), cam.position.y - (cam.viewportHeight / 2 * cam.zoom));
             }
         }
-
+        //quản lý việc vẽ các yếu tố đồ họa như hình hộp, ánh sáng môi trường, và cập nhật giao diện người dùng trong trò chơi.
         game.batch.end();
         //renderer.render(top);
         shapeRenderer.setProjectionMatrix(cam.combined);
@@ -483,15 +495,21 @@ public class PlayScreen implements Screen{
         box.dispose();
         border.dispose();
     }
-
+    
+    //import map từ file tmx
     public TiledMap getMap() {
         return map;
     }
+
+
     public boolean isCollision(Rectangle boundingBox){
+        // lấy lớp bản đồ có tên "Collision" từ đối tượng map. Lớp này chứa các đối tượng mà bạn đã định nghĩa để xử lý va chạm
         MapLayer objectLayer = map.getLayers().get("Collision");
+        //Phương thức này gọi checkCollision, truyền vào boundingBox của đối tượng cần kiểm tra (trong trường hợp này là nhân vật) và objectLayer chứa các đối tượng va chạm. Phương thức checkCollision sẽ trả về true nếu có va chạm xảy ra và false nếu không.
         return checkCollision(boundingBox, objectLayer);
     }
 
+    
     public MapObject isTeleport(Rectangle boundingBox) {
         MapLayer objectLayer = map.getLayers().get("Teleport");
         for(MapObject object: objectLayer.getObjects()){

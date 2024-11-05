@@ -10,14 +10,12 @@ import com.mygdx.game.screens.PlayScreen;
 
 public class MapLoader {
 
-
     private Vector2 playerSpawn;
     private TiledMap map;
 
     public MapLoader(PlayScreen screen) {
         map = screen.getMap();
         playerSpawn = new Vector2();
-
 
         for (MapObject object : map.getLayers().get("Player_Spawn").getObjects()) {
             Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
@@ -31,8 +29,6 @@ public class MapLoader {
             }
         }
     }
-
-
 
     public Vector2 getPlayerSpawn() {
         return playerSpawn;
