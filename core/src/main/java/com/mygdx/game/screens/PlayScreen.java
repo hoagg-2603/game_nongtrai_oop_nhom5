@@ -534,9 +534,13 @@ public class PlayScreen implements Screen{
 
     //: Phương thức checkCollision kiểm tra xem boundingBox (hộp bao quanh) của một đối tượng nào đó (ví dụ: nhân vật người chơi) có giao nhau với bất kỳ đối tượng nào trong objectLayer (lớp đối tượng trên bản đồ) hay không.
     public boolean checkCollision(Rectangle boundingBox, MapLayer objectLayer) {
+        //Vòng lặp qua tất cả các đối tượng trong objectLayer:
         for (MapObject object : objectLayer.getObjects()) {
+            //Chỉ xử lý những đối tượng là RectangleMapObject. Điều này giả định rằng tất cả các đối tượng va chạm đều được định nghĩa dưới dạng hình chữ nhật trong bản đồ.
             if (object instanceof RectangleMapObject) {
+                //Lấy hình chữ nhật bao quanh đối tượng.
                 Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
+                //Lấy hình chữ nhật của đối tượng và kiểm tra xem boundingBox có giao nhau với hình chữ nhật đó không. Nếu có, trả về true ngay lập tức.
                 if (boundingBox.overlaps(rectangle))
                     return true;
             }
