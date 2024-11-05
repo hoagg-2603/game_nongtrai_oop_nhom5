@@ -509,8 +509,9 @@ public class PlayScreen implements Screen{
         return checkCollision(boundingBox, objectLayer);
     }
 
-    
+
     public MapObject isTeleport(Rectangle boundingBox) {
+        // Chỉ xử lý các đối tượng là RectangleMapObject. Nếu có các loại đối tượng khác (ví dụ: PolygonMapObject, CircleMapObject), chúng sẽ bị bỏ qua. Điều này có thể là đúng nếu bạn chỉ sử dụng hình chữ nhật cho teleport.
         MapLayer objectLayer = map.getLayers().get("Teleport");
         for(MapObject object: objectLayer.getObjects()){
             if(object instanceof RectangleMapObject){
@@ -531,6 +532,7 @@ public class PlayScreen implements Screen{
             return false;
     }
 
+    //: Phương thức checkCollision kiểm tra xem boundingBox (hộp bao quanh) của một đối tượng nào đó (ví dụ: nhân vật người chơi) có giao nhau với bất kỳ đối tượng nào trong objectLayer (lớp đối tượng trên bản đồ) hay không.
     public boolean checkCollision(Rectangle boundingBox, MapLayer objectLayer) {
         for (MapObject object : objectLayer.getObjects()) {
             if (object instanceof RectangleMapObject) {
