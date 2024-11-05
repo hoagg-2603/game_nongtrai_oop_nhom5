@@ -128,26 +128,44 @@ public class PlayScreen implements Screen{
         cam = new OrthographicCamera();
         gameView = new FitViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), cam);
         cam.setToOrtho(false, gameView.getWorldWidth(), gameView.getWorldHeight());
+        
+        //load the map
         map = new TmxMapLoader().load("farm.tmx");
         renderer = new OrthogonalTiledMapRenderer(map);
         renderer.setView(cam);
+
+
         seeds = new Array<Seeds>();
         loader = new MapLoader(this);
+
+        // chiều rộng thực tế của bản đồ tính theo pixel
         mapWidth = map.getProperties().get("width", Integer.class) * 32;
+        // chiều cao thực tế của bản đồ.
         mapHeight = map.getProperties().get("height", Integer.class) * 32;
+        //World là môi trường vật lý nơi các vật thể tương tác với nhau. Trọng lực -9.8f mô phỏng gia tốc trọng trường như trong thực tế.
         world = new World(new Vector2(0, -9.8f), true);
+        // Tạo entity là các nhân vật trong game
         player = new Entity(world);
+        //Thiết lập vị trí bắt đầu cho player dựa trên tọa độ lấy từ phương thức getPlayerSpawn() của loader.
         player.startingPosition(loader.getPlayerSpawn().x, loader.getPlayerSpawn().y);
+        // Lấy sprite (hình ảnh) hiện tại của player và gán nó cho biến currentPlayerSprite.
         currentPlayerSprite = player.getFrameSprite();
+        //Tạo một đối tượng PlayerController mới để xử lý đầu vào và điều khiển player.
         controller = new PlayerController(this, player);
+        //Khởi tạo một ShapeRenderer để vẽ các hình dạng cơ bản trong trò chơi.
         shapeRenderer = new ShapeRenderer();
 
         crops = new Array<Crop>();
 
+        // Độ zoom nhỏ hơn 1.0f sẽ làm camera lùi ra xa, trong khi lớn hơn 1.0f sẽ phóng to vào cảnh.
         cam.zoom = .5f;
+        // Timer_ có thể đếm thời gian, quản lý sự kiện theo thời gian hoặc điều khiển thời gian trong trò chơi.
         timer = new Timer_();
+        //Khởi động bộ đếm thời gian với các tham số cụ thể.
         timer.StartNew(60, true, true);
+        //Thiết lập thời gian bắt đầu cho bộ đếm thời gian.
         timer.setStartTime(0,12,0,0);
+        //GameTimeClock sử dụng timer để theo dõi và hiển thị thời gian trong trò chơi.
         clock = new GameTimeClock(timer);
         currentDays = 0;
         numCrops = 0;
