@@ -189,7 +189,6 @@
  </objectgroup>
  <objectgroup id="8" name="Player_Spawn">
   <object id="89" name="start" x="1888" y="1312" width="32" height="32"/>
-  <object id="123" name="farm" x="1792" y="1312" width="32" height="32"/>
  </objectgroup>
  <layer id="9" name="Building_L2" width="100" height="100">
   <data encoding="base64">
