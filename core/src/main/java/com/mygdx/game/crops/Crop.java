@@ -1,16 +1,14 @@
 package com.mygdx.game.crops;
 
 public class Crop {
-	//作物类，存储作物信息
-
-	private int cropId;// 农作物编号
-	private String name;// 农作物名称
-	private String pic;// 农作物果实图片
-	private int stageCount;// 农作物生长阶段数
-	private int unitTime;// 农作物生长时各阶段时间基数
-	private double seedPrice;// 种子购买单价
-	private int buyLevel;// 种子购买等级
-	private int cropNumber;//种子库存量
+	private int cropId;
+	private String name;
+	private String pic;
+	private int stageCount;
+	private int unitTime;
+	private double seedPrice;
+	private int buyLevel;
+	private int cropNumber;
 
 
 	public Crop(int cropId, String name, String pic, int stageCount,
@@ -28,19 +26,15 @@ public class Crop {
     	 super();
      }
 
-	// 按农作物id获取果实图片的完整路径
 	public String getCropFruitPic() {
 		return "../assets/image/crops/crop" + cropId + "/seed.png";
 	}
 
 
-
-	// 按农作物id获取农作物枯萎图片的完整路径
 	public String getCropEndPic() {
 		return "../assets/image/crops/crop" + cropId + "/cron_end.png";
 	}
 
-	// 按农作物id和现在的生长阶段获取农作物当前阶段图片的完整路径
 	public String getNowStagePic( int stageNow) {
 		return "../assets/image/crops/crop" + cropId + "/" + stageNow + ".png";
 	}
