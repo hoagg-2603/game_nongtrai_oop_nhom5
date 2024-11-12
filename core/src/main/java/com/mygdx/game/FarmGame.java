@@ -1,36 +1,39 @@
-/*
-	Classes for timer and day/night cycle were found here:
-	http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=9557
-	All art and sounds from
-	https://opengameart.org/
-
- */
-
-
 package com.mygdx.game;
+
+import java.sql.SQLException;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.assets.loaders.SkinLoader;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.mygdx.game.screens.MainMenu;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.mygdx.game.screens.LoadingScreen;
+import com.mygdx.game.screens.LoginScreen;
+import com.mygdx.game.screens.MenuScreen;
 import com.mygdx.game.screens.PlayScreen;
+import com.mygdx.game.tools.GameMusic;
+import com.mygdx.game.tools.SQLConnector;
 
 public class FarmGame extends Game {
-    public static final float UNIT_SCALE = 1/32f;
+    public AssetManager manager;
+
     public SpriteBatch batch;
-    public static AssetManager manager;
+    public PlayScreen playScreen;
+    public LoginScreen loginScreen;
+    public MenuScreen menuScreen;
+    public LoadingScreen loadingScreen;
+    public GameMusic gamemusic;
 
     @Override
     public void create () {
-        batch = new SpriteBatch();
-        manager = new AssetManager();
-        manager.load("music.mp3", Music.class);
-        manager.load("water.mp3", Sound.class);
-        manager.load("dirt.mp3", Sound.class);
+        manager=new AssetManager();
+        gamemusic=new GameMusic();
+        manager.load("../assets/skin/skin.atlas", TextureAtlas.class);
+        manager.load("../assets/skin/skin.json", Skin.class, new SkinLoader.SkinParameter("../assets/skin/skin.atlas"));
         manager.finishLoading();
-        setScreen(new MainMenu(this));
+        batch = new SpriteBatch();
+        setScreen(loginScreen=new LoginScreen(this));
     }
 
     @Override
@@ -40,6 +43,28 @@ public class FarmGame extends Game {
 
     @Override
     public void dispose () {
-        batch.dispose();
+
+        if(playScreen!=null)
+            playScreen.dispose();
+        if(loginScreen!=null)
+            loginScreen.dispose();
+        if(menuScreen!=null)
+            menuScreen.dispose();
+        if(loginScreen!=null)
+            loginScreen.dispose();
+        if(batch!=null)
+            batch.dispose();
+        if(manager!=null)
+            manager.dispose();
+        if(SQLConnector.getConn()!=null) {
+            try {
+                SQLConnector.getStmt().close();
+                SQLConnector.getConn().close();
+                System.out.println("Kết nối cơ sở dữ liệu đã đóng！");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
 }
