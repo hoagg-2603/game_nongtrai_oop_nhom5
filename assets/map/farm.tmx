@@ -48,7 +48,7 @@
  </layer>
  <layer id="7" name="TileLayer4" width="186" height="42">
   <data encoding="base64" compression="zlib">
-   eAHt0jERgDAMBdDoYGPDDWABsAC4QAJaGwvdeu3L3d+y5OVHGAIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIEWhVYp4gts2cMgV4Fjuz3mbn0vNcXuysF7uz3k3n1XB8IVAl8c9W6ZQIEBhL4l4GOdSoBAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECDQjEABpjAF2w==
+   eAHt0DENACAMBEB0sLHhhmAMCWhlAAtNgFyXbp//S8kRIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIECAAAECBAgQIHCrQMu7WT//1p56ESBAgAABAgQiBEaJSJVJgMAPArP+sMIGAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBA4DWBBV60Ako=
   </data>
  </layer>
  <objectgroup id="3" name="Collision">
@@ -120,7 +120,6 @@
   <object id="128" x="5942" y="-2" width="8" height="1280"/>
   <object id="146" x="1922" y="2" width="62" height="638"/>
   <object id="147" x="1918" y="858" width="66" height="412"/>
-  <object id="148" x="3104" y="4" width="66" height="250.667"/>
   <object id="149" x="4594" y="4" width="8" height="504"/>
   <object id="150" x="4540" y="498" height="6"/>
   <object id="152" x="4596" y="508" width="8" height="511.333"/>
@@ -150,7 +149,5 @@
   <object id="144" name="outSide" x="5258" y="1076" width="114" height="38" visible="0"/>
   <object id="145" name="inSide" x="5228" y="862" width="164" height="46" visible="0"/>
  </objectgroup>
- <objectgroup id="10" name="NPC">
-  <object id="133" name="visitor" x="2632" y="750" width="64" height="78"/>
- </objectgroup>
+ <objectgroup id="10" name="NPC"/>
 </map>
