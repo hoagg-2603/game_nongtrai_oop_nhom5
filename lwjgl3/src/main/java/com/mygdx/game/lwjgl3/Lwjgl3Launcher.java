@@ -6,7 +6,7 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.mygdx.game.FarmGame;
 
-/** Launches the desktop (LWJGL3) application. */
+/** Launches the desktop (LWJGL3) Lightweight Java Game Library */
 public class Lwjgl3Launcher {
     public static void main(String[] args) {
         Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
@@ -16,5 +16,9 @@ public class Lwjgl3Launcher {
 
         new Lwjgl3Application(new FarmGame(), config);
         Gdx.app.setLogLevel(Application.LOG_DEBUG); // Đặt mức độ log
+        //LOG_NONE: Không ghi log.
+        //LOG_ERROR: Chỉ ghi lại các lỗi.
+        //LOG_INFO: Ghi lại thông tin chung.
+        //LOG_DEBUG: Ghi lại thông tin chi tiết để phục vụ việc gỡ lỗi.
     }
 }

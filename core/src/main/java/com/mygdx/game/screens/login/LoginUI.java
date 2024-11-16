@@ -38,9 +38,9 @@ public class LoginUI extends Group {
     public LoginUI(Skin skin){
         this.skin=skin;
 
-        userIDLabel=new Label("Tài khỏa:", skin);
+        userIDLabel=new Label("Username:", skin);
         userIDLabel.setAlignment(Align.left);
-        passwordLabel=new Label("Mật khẩu:",skin);
+        passwordLabel=new Label("Password:",skin);
         passwordLabel.setAlignment(Align.left);
 
         userIDTextField=new TextField("",skin);
@@ -52,7 +52,7 @@ public class LoginUI extends Group {
         passwordTextField.setPasswordMode(true);
         passwordTextField.setPasswordCharacter('*');
 
-        remember=new CheckBox("Ghi nhớ mật khẩu",skin);
+        remember=new CheckBox("Remember password?",skin);
 
         if(Check.checkLocalUserExist())
         {
@@ -62,10 +62,8 @@ public class LoginUI extends Group {
             passwordTextField.setText(user.getPass());
         }
 
-        loginButton=new TextButton("Đăng nhập", skin);
-        registerButton=new TextButton("Đăng ký", skin);
-
-
+        loginButton=new TextButton("Log in", skin);
+        registerButton=new TextButton("Sign up", skin);
 
 
         loginTable=new Table();

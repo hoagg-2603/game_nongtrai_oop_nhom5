@@ -40,10 +40,10 @@ public class RegisterUI extends Group {
     public RegisterUI(Skin skin) {
 
         //Khởi tạolabel
-        userIDLabel = new Label("Tài khoản:", skin);
-        passwordLabel = new Label("Mật khẩu:", skin);
-        passpow=new Label("Độ mạnh mật khẩu:",skin);
-        verifyPassLabel = new Label("Xác nhận mật khẩu:", skin);
+        userIDLabel = new Label("Username:", skin);
+        passwordLabel = new Label("Password:", skin);
+        passpow=new Label("Password strength:",skin);
+        verifyPassLabel = new Label("Confirm password:", skin);
 
 
         //Có 4 trường thông tin：Số tk+Tên người dùng+Mật khẩu+Xác nhận mật khẩu
@@ -68,13 +68,13 @@ public class RegisterUI extends Group {
         // Sử dụng * thay cho kí tự mật khẩu được nhập
         passwordTextField.setPasswordCharacter('*');
         verifyPassTextField.setPasswordCharacter('*');
-        userIDTextField.setMessageText("5-12kí tự，bao gồm cả chữ và số");
-        passwordTextField.setMessageText("Độ dài mật khẩu phải lớn hơn 5");
-        verifyPassTextField.setMessageText("Độ dài mật khẩu phải lớn hơn 5");
+        userIDTextField.setMessageText("5 - 12 characters, letters and numbers only");
+        passwordTextField.setMessageText("Password must be greater than 5");
+        verifyPassTextField.setMessageText("Password must be greater than 5");
 
-        registerButton = new TextButton("Đăng ký", skin);
+        registerButton = new TextButton("Sign up", skin);
         registerButton.setTransform(true);
-        cancelButton = new TextButton("Hủy bỏ", skin);
+        cancelButton = new TextButton("Cancel", skin);
         cancelButton.setTransform(true);
 
         buttonTable = new Table();
@@ -83,16 +83,16 @@ public class RegisterUI extends Group {
         buttonTable.add(cancelButton).padLeft(100).padRight(80);
         buttonTable.setPosition(50, -350);
 
-        userIDLabel.setPosition(-250,100);
+        userIDLabel.setPosition(-200,118);
         userIDTextField.setPosition(-100,100);
-        passwordLabel.setPosition(-250,0);
+        passwordLabel.setPosition(-200,18);
         passwordTextField.setPosition(-100,0);
-        passpow.setPosition(-250,-100);
+        passpow.setPosition(-250,-88);
         pass1.setPosition(-100,-100);
         pass2.setPosition(-100,-100);
         pass3.setPosition(-100,-100);
         pass4.setPosition(-100,-100);
-        verifyPassLabel.setPosition(-250,-200);
+        verifyPassLabel.setPosition(-250,-182);
         verifyPassTextField.setPosition(-100,-200);
         pass2.setVisible(false);
         pass3.setVisible(false);
@@ -115,26 +115,26 @@ public class RegisterUI extends Group {
 
     }
 
-    public TextButton getRegisterButton() {
+    public TextButton getRegisterButton() { // Hàm lấy nút đăng ký
         return registerButton;
     }
 
-    public TextButton getCancelButton() {
+    public TextButton getCancelButton() { // Hàm lấy nút hủy
         return cancelButton;
     }
 
-    public TextField getUserIDTextField() {
+    public TextField getUserIDTextField() { // Hàm lấy trường văn bản tên người dùng
         return userIDTextField;
     }
 
-    public TextField getPasswordTextField() {
+    public TextField getPasswordTextField() { // Hàm lấy trường văn bản mật khẩu 
         return passwordTextField;
     }
 
-    public TextField getVerifyPassTextField() {
+    public TextField getVerifyPassTextField() { // Hàm lấy trường văn bản xác nhận mật khẩu
         return verifyPassTextField;
     }
-    public  Image getPass1(){
+    public  Image getPass1(){ 
         return pass1;
     }
     public  Image getPass2(){

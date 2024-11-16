@@ -16,8 +16,8 @@ public class User {
     private int hp;//máu
     private boolean faint;//trạng thái,thức/ngủ
     private boolean sleep;//state，thức/ngủ
-    private float positionX;
-    private float positionY;
+    private float positionX; //vị trí x
+    private float positionY; //vị trí y
 
     public User() {
         super();
