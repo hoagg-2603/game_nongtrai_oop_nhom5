@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="186" height="42" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="182">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="186" height="42" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="185">
  <properties>
   <property name="name" value="farm"/>
  </properties>
@@ -68,7 +68,7 @@
   <object id="16" x="458.667" y="469.333" width="243.273" height="193.333"/>
   <object id="17" x="784" y="470.667" width="180" height="186.667"/>
   <object id="18" x="708" y="466.667" width="77.3333" height="93.3333"/>
-  <object id="20" x="438.667" y="290.667" width="556" height="172"/>
+  <object id="20" x="443.667" y="290.667" width="551" height="172"/>
   <object id="24" x="894.667" y="1.3333" width="32" height="25.3333"/>
   <object id="25" x="992" y="110.667" width="60" height="45.3333"/>
   <object id="26" x="969.333" y="576" width="129.333" height="50.6667"/>
@@ -139,21 +139,21 @@
   <object id="171" x="5177.33" y="1054.67" width="81.3333" height="61.3333"/>
   <object id="172" x="5258.67" y="1116" height="2.66667"/>
   <object id="173" x="5378.67" y="1054.67" width="64" height="61.3333"/>
-  <object id="175" x="597" y="157" width="241" height="49"/>
-  <object id="176" x="534" y="204">
-   <polygon points="0,0 52,-51 53,4"/>
+  <object id="175" x="592" y="148" width="247" height="141"/>
+  <object id="176" x="536.642" y="203.607">
+   <polygon points="-89.6424,87.3931 54.3576,-56.6069 53.404,83.4207"/>
   </object>
-  <object id="177" x="844" y="155">
-   <polygon points="0,0 -1,51 54,50"/>
+  <object id="177" x="842.039" y="155.146">
+   <polygon points="-3.03947,-7.14583 -2.97368,136.792 150.961,137.854"/>
   </object>
-  <object id="178" x="939" y="251">
-   <polygon points="0,0 1,34 44,36"/>
+  <object id="182" x="3251" y="650.642" rotation="-180">
+   <polygon points="-4,7 -13.6783,-32.5866 13.2542,-57.1538 10.3377,-82.7864 29.0045,-83.3333 26.1462,-55.8068 39.8796,-46.3333 50.6846,-28.337 42.5078,2.05983 22.6037,7.14391"/>
   </object>
-  <object id="179" x="481" y="259">
-   <polygon points="0,0 0,28 -36,30"/>
+  <object id="183" x="3411" y="651" rotation="-180">
+   <polygon points="-4,7 -13.6783,-32.5866 13.2542,-57.1538 10.3377,-82.7864 29.0045,-83.3333 26.1462,-55.8068 39.8796,-46.3333 50.6846,-28.337 42.5078,2.05983 22.6037,7.14391"/>
   </object>
-  <object id="181" x="532" y="208">
-   <polygon points="0,0 -46,45 -48,74 403,78 402,39 367,2"/>
+  <object id="184" x="3569" y="671" rotation="-180">
+   <polygon points="-4,7 -13.6783,-32.5866 13.2542,-57.1538 10.3377,-82.7864 29.0045,-83.3333 26.1462,-55.8068 39.8796,-46.3333 50.6846,-28.337 42.5078,2.05983 22.6037,7.14391"/>
   </object>
  </objectgroup>
  <objectgroup id="6" name="Teleport">
