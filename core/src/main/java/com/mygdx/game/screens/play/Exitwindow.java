@@ -1,3 +1,4 @@
+// cửa sổ exit
 package com.mygdx.game.screens.play;
 
 import com.badlogic.gdx.Gdx;
