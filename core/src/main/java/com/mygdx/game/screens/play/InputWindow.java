@@ -45,39 +45,6 @@ public class InputWindow extends Window{
     	 Image seedImage=new Image(texture);//Truyền dữ kiệu vào đối tượng hình ảnh
          seedImage.setSize(80, 80);
 
-<<<<<<< Updated upstream
- 	     Label seedNameLabel=new Label(crop.getName(),skin); //Tên hạt giống
- 	     Label seedPriceLabel=new Label("Price: "+crop.getSeedPrice(),skin); //Giá hạt giống
- 	     Label seedBuyLevelLabel=new Label("Quantity: "+crop.getBuyLevel(),skin);
-    	 numberInputField=new TextField("",skin); // Hộp đầu vào để nhập số lượng mua
-    	 numberInputField.setAlignment(Align.center);//Giá trị nhận được
- 		 numberInputField.setSize(120, 50); //Kích thước hộp đầu vào
- 		 fieldTypeLabel=new Label("Buy quantity from 1 - 99",skin); //Nhập số lượng mua từ 1-99
-
- 		 InputWindow thisInputWindow=this;
- 		 confirmButton=new TextButton("Confirm",skin); //Nút xác nhận mua
-         confirmButton.addListener(new ClickListener(Buttons.LEFT){ //Nhấn nút trái chuột
-
-        	 public void clicked(InputEvent event,float x, float y) {	//Nhấn nút trái chuột
-
-        	    String regex="^[1-9]\\d*$";
-        		if(!numberInputField.getText().matches(regex)) {	//Kiểm tra xem số lượng mua có đúng không
-           		new Dialog("",skin,"dialog").text("Please input quantity in numbers 1 to 99").button("Confirm", false).show(stage);
-           		numberInputField.setText(""); //Xóa số lượng mua
-        		}
-           		else if(numberInputField.getText().length()>2) { //Kiểm tra xem số lượng mua có vượt quá giới hạn không
-           		new Dialog("",skin,"dialog").text("Quantity out of range").button("Confirm", false).show(stage);
-              		numberInputField.setText(""); //Xóa số lượng mua
-           		} 
-           		else{
-               		int number = Integer.parseInt(numberInputField.getText());
-               		if(number*crop.getSeedPrice()>user.getMoney()) {
-               			new Dialog("",skin,"dialog").text("You do not have enough money!").button("Confirm", false).show(stage);
-               			numberInputField.setText("");
-               		}
-               		else if(user.getLevel()<crop.getBuyLevel()) {
-               			new Dialog("",skin,"dialog").text("Your level is not enough to buy this!").button("Confirm", false).show(stage);
-=======
  	     Label seedNameLabel=new Label(crop.getName(),skin);
  	     Label seedPriceLabel=new Label("Tên: "+crop.getSeedPrice(),skin);
  	     Label seedBuyLevelLabel=new Label("Mục: "+crop.getBuyLevel(),skin);
@@ -109,7 +76,6 @@ public class InputWindow extends Window{
                		}
                		else if(user.getLevel()<crop.getBuyLevel()) {
                			new Dialog("",skin,"dialog").text("Xin lỗi,cấp bậc hiện tại chưa đủ！").button("Xác nhận", false).show(stage);
->>>>>>> Stashed changes
                			numberInputField.setText("");
                		}
                		else {
@@ -120,17 +86,10 @@ public class InputWindow extends Window{
         							thisInputWindow.setVisible(false);;//Nhập
         						}
         					}
-<<<<<<< Updated upstream
-        				}.text("Purchase successfully"+crop.getName()+"x"+numberInputField.getText()).button("Confirm", true).show(stage); //Mua thành công
-               			numberInputField.setText(""); //Xóa số lượng mua
-               			crop.setCropNumber(crop.getCropNumber()+number); // Cập nhật số lượng hạt giống
-               			user.setMoney(user.getMoney()-number*crop.getSeedPrice()); //Cập nhật số tiền
-=======
         				}.text("Đã mua thành công"+crop.getName()+"x"+numberInputField.getText()).button("确认", true).show(stage);
                			numberInputField.setText("");
                			crop.setCropNumber(crop.getCropNumber()+number);
                			user.setMoney(user.getMoney()-number*crop.getSeedPrice());
->>>>>>> Stashed changes
                		}
            	    }
 
@@ -140,15 +99,6 @@ public class InputWindow extends Window{
      	     }
          });
 
-<<<<<<< Updated upstream
- 		 cancelButton=new TextButton("Cancel",skin); //Nút hủy
-         cancelButton.addListener(new ClickListener(Buttons.LEFT){//Hủy thao tác và đóng cửa sổ
-
-        	 public void clicked(InputEvent event,float x, float y) { //Nhấn nút trái chuột
-
-        		thisInputWindow.setVisible(false); //Đóng cửa sổ
-        		numberInputField.setText(""); //Xóa số lượng mua
-=======
  		 cancelButton=new TextButton("Hủy",skin);
          cancelButton.addListener(new ClickListener(Buttons.LEFT){//Hủy thao tác và đóng cửa sổ
 
@@ -156,21 +106,11 @@ public class InputWindow extends Window{
 
         		thisInputWindow.setVisible(false);
         		numberInputField.setText("");
->>>>>>> Stashed changes
      	     }
          });
 
 
          closeButton=new ImageButton(skin,"win1");//cửa sổ
-<<<<<<< Updated upstream
- 		 closeButton.setTransform(true); //Chuyển đổi
- 		 closeButton.setScale(0.7f); //Thu phóng
-         closeButton.addListener(new ClickListener(Buttons.LEFT){ //Nhấn nút trái chuột
-        	 public void clicked(InputEvent event,float x, float y) { //Nhấn nút trái chuột
-
-        		 thisInputWindow.setVisible(false); //Đóng cửa sổ
-        		 numberInputField.setText(""); // Xóa số lượng mua
-=======
  		 closeButton.setTransform(true);
  		 closeButton.setScale(0.7f);
          closeButton.addListener(new ClickListener(Buttons.LEFT){
@@ -178,7 +118,6 @@ public class InputWindow extends Window{
 
         		 thisInputWindow.setVisible(false);
         		 numberInputField.setText("");
->>>>>>> Stashed changes
      	     }
          });
  		this.addActor(seedNameLabel);
@@ -222,37 +161,6 @@ public class InputWindow extends Window{
 	     Image fruitImage=new Image(texture);
 	     fruitImage.setSize(80, 80);
  	     Label fruitNameLabel=new Label(fruit.getName(),skin);
-<<<<<<< Updated upstream
- 	     Label fruitPriceLabel=new Label("Price: "+fruit.getFruitPrice(),skin); //Giá trị trái cây
- 	     fruitNumberLabel=new Label("Quantity: "+fruit.getFruitNumber(),skin); //Số lượng trái cây
-   	     numberInputField=new TextField("",skin);
-		 numberInputField.setSize(120, 50);
-		 numberInputField.setAlignment(Align.center);
-		 fieldTypeLabel=new Label("Input sell quantity from 1 to 999",skin);  //Nhập số lượng bán từ 1-999
-
-		 InputWindow thisInputWindow=this;
-		 confirmButton=new TextButton("Confirm",skin);
-         confirmButton.addListener(new ClickListener(Buttons.LEFT){
-       	    public void clicked(InputEvent event,float x, float y) {
-
-   			    String regex="^[1-9]\\d*$";
-   			    if(!numberInputField.getText().matches(regex)) {
-
-      			    new Dialog("",skin,"dialog").text("Error! Please try again.").button("Confirm", true).show(stage);
-      			    numberInputField.setText("");
-   			    }
-      			else if(numberInputField.getText().length()>3) {
-					new Dialog("",skin,"dialog").text("Too many, exceeds the available quantity!").button("Confirm", true).show(stage); //Too many, exceeds the available quantity
-         			numberInputField.setText("");
-      			}
-      			else{
-
-          			int number = Integer.parseInt(numberInputField.getText());
-          			if(number>fruit.getFruitNumber()) {
-
-
-						 new Dialog("",skin,"dialog").text("Sorry, you don't have enough fruits!").button("Confirm", true).show(stage);
-=======
  	     Label fruitPriceLabel=new Label("Giá: "+fruit.getFruitPrice(),skin);
  	     fruitNumberLabel=new Label("Số lượng: "+fruit.getFruitNumber(),skin);
    	     numberInputField=new TextField("",skin);
@@ -282,7 +190,6 @@ public class InputWindow extends Window{
 
 
           			     new Dialog("",skin,"dialog").text("Xin lỗi, số lượng trái cây của bạn không đủ!").button("Xác nhận", true).show(stage);
->>>>>>> Stashed changes
           				 numberInputField.setText("");
           			 }
           			 else {
@@ -295,11 +202,7 @@ public class InputWindow extends Window{
             						thisInputWindow.setVisible(false);;//Nhập
             					}
             				}
-<<<<<<< Updated upstream
-            			 }.text("Sell successfully! Money + "+Integer.parseInt(numberInputField.getText())*fruit.getFruitPrice()).button("Quantity", true).show(stage);
-=======
             			 }.text("Đã bán thành công!Tiền+"+Integer.parseInt(numberInputField.getText())*fruit.getFruitPrice()).button("Số lượng", true).show(stage);
->>>>>>> Stashed changes
           				 numberInputField.setText("");
           				 fruit.setFruitNumber(fruit.getFruitNumber()-number);
           				 user.setMoney(user.getMoney()+number*fruit.getFruitPrice());
@@ -310,11 +213,7 @@ public class InputWindow extends Window{
     	   }
         });
 
-<<<<<<< Updated upstream
-		 cancelButton=new TextButton("Cancel",skin);
-=======
 		 cancelButton=new TextButton("Hủy",skin);
->>>>>>> Stashed changes
          cancelButton.addListener(new ClickListener(Buttons.LEFT){
        	 public void clicked(InputEvent event,float x, float y) {
 
@@ -377,19 +276,11 @@ public class InputWindow extends Window{
 		 numberInputField.setSize(120, 50);
 		 numberInputField.setAlignment(Align.center);
 		 fieldTypeLabel=new Label(fieldType+"(1-99)",skin);
-<<<<<<< Updated upstream
-		 confirmButton=new TextButton("Confirm",skin);
-
-
-         InputWindow thisInputWindow=this;
-		 cancelButton=new TextButton("Cancel",skin);
-=======
 		 confirmButton=new TextButton("Xác nhận",skin);
 
 
          InputWindow thisInputWindow=this;
 		 cancelButton=new TextButton("Hủy",skin);
->>>>>>> Stashed changes
          cancelButton.addListener(new ClickListener(Buttons.LEFT){
        	 public void clicked(InputEvent event,float x, float y) {
 
@@ -430,19 +321,11 @@ public class InputWindow extends Window{
          cancelButton.setPosition(x/4*2.8f-confirmButton.getWidth()/2, 0);
          this.setPosition(Gdx.graphics.getWidth()/2-this.getWidth()/2, Gdx.graphics.getHeight()/2-this.getHeight()/2);
          this.setVisible(false);
-<<<<<<< Updated upstream
-         if(fieldType=="Quantity to buy") {
-
-            Label propNameLabel=new Label(prop.getName(),skin);
-     	    Label propPriceLabel=new Label("Price: "+prop.getPropPrice(),skin); //Giá trị đạo cụ
-     	    Label propBuyLevelLabel=new Label("Quantity: "+prop.getBuyLevel(),skin); //Số lượng mua
-=======
          if(fieldType=="Số lượng mua") {
 
             Label propNameLabel=new Label(prop.getName(),skin);
      	    Label propPriceLabel=new Label("Giá trị: "+prop.getPropPrice(),skin);
      	    Label propBuyLevelLabel=new Label("Giá trị: "+prop.getBuyLevel(),skin);
->>>>>>> Stashed changes
 
     		 this.addActor(propNameLabel);
     		 this.addActor(propPriceLabel);
@@ -457,44 +340,17 @@ public class InputWindow extends Window{
 
     	   			 String regex="^[1-9]\\d*$";
     	   			 if(!numberInputField.getText().matches(regex)) {
-<<<<<<< Updated upstream
-						new Dialog("",skin,"dialog").text("Invalid input, please try again!").button("Confirm", true).show(stage);
-    	      			 numberInputField.setText("");
-    	   			 }
-    	      		 else if(numberInputField.getText().length()>3) {
-						new Dialog("",skin,"dialog").text("Too many, exceeds the purchase limit!").button("Confirm", true).show(stage);
-=======
     	      			 new Dialog("",skin,"dialog").text("Tôi không hiểu mong muốn cửa bạn,vui lòng thực hiện lại!").button("Xác nhận", true).show(stage);
     	      			 numberInputField.setText("");
     	   			 }
     	      		 else if(numberInputField.getText().length()>3) {
     	      			 new Dialog("",skin,"dialog").text("Quá nhiều,vượt quá giới hạn mua!").button("Xác nhận", true).show(stage);
->>>>>>> Stashed changes
     	         		 numberInputField.setText("");
     	      		 }
     	      		 else{
     	          		 int number = Integer.parseInt(numberInputField.getText());
     	          		 if(number*prop.getPropPrice()>user.getMoney()) {
 
-<<<<<<< Updated upstream
-							new Dialog("",skin,"dialog").text("Sorry, you don't have enough money!").button("Confirm", true).show(stage);
-    	          			 numberInputField.setText("");
-    	          		 }
-    	          		else if(user.getLevel()<prop.getBuyLevel()) {
-							new Dialog("",skin,"dialog").text("Sorry, your level is not high enough!").button("Confirm", false).show(stage);
-                   			numberInputField.setText("");
-                   		}
-    	          		else {
-							new Dialog("",skin,"dialog"){
-								 protected void result(Object object) {
-
-									if (object.equals(true)) {
-
-										thisInputWindow.setVisible(false);
-									}
-								}
-							 }.text("Purchase successful: "+prop.getName()+" x "+numberInputField.getText()).button("Confirm", true).show(stage);
-=======
     	          			 new Dialog("",skin,"dialog").text("Xin lỗi,bạn không đủ tiền!").button("Xác nhận", true).show(stage);
     	          			 numberInputField.setText("");
     	          		 }
@@ -512,7 +368,6 @@ public class InputWindow extends Window{
                  					}
                  				}
                  			 }.text("Đã mua thành công"+prop.getName()+"x"+numberInputField.getText()).button("Xác nhận", true).show(stage);
->>>>>>> Stashed changes
     	          		     numberInputField.setText("");
     	          			 prop.setPropNumber(prop.getPropNumber()+number);
     	          			 user.setMoney(user.getMoney()-number*prop.getPropPrice());
@@ -526,19 +381,11 @@ public class InputWindow extends Window{
     	    	  }
     	       });
          }
-<<<<<<< Updated upstream
-         else if(fieldType=="Quantity to use: ") { //Số lượng sử dụng của đạo cụ
-
-        	 Label propNameLabel=new Label(prop.getName(),skin);
-        	 Label propPropertyLabel=new Label(prop.getProperty()+": "+prop.getValue(),skin);
-			propNumberLabel=new Label("Quantity: "+prop.getPropNumber(),skin);
-=======
          else if(fieldType=="Số lượng sử dụng") {
 
         	 Label propNameLabel=new Label(prop.getName(),skin);
         	 Label propPropertyLabel=new Label(prop.getProperty()+": "+prop.getValue(),skin);
         	 propNumberLabel=new Label("Giá trị: "+prop.getPropNumber(),skin);
->>>>>>> Stashed changes
 
         	 this.addActor(propNameLabel);
     		 this.addActor(propPropertyLabel);
@@ -551,39 +398,16 @@ public class InputWindow extends Window{
     	       	 public void clicked(InputEvent event,float x, float y) {
     	   			 String regex="^[1-9]\\d*$";
     	   			 if(!numberInputField.getText().matches(regex)) {
-<<<<<<< Updated upstream
-						new Dialog("",skin,"dialog").text("Invalid input, please try again!").button("Confirm", false).show(stage);
-    	      			 numberInputField.setText("");
-    	   			 }
-    	      		 else if(numberInputField.getText().length()>3) {
-						new Dialog("",skin,"dialog").text("Too many, exceeds the usage limit!").button("Confirm", false).show(stage);
-=======
     	      			 new Dialog("",skin,"dialog").text("Tôi không hiểu mong muốn cửa bạn,vui lòng thực hiện lại!").button("Xác nhận", false).show(stage);
     	      			 numberInputField.setText("");
     	   			 }
     	      		 else if(numberInputField.getText().length()>3) {
     	      			 new Dialog("",skin,"dialog").text("Quá nhiều,vượt quá giới hạn sử dụng!").button("Xác nhận", false).show(stage);
->>>>>>> Stashed changes
     	         	     numberInputField.setText("");
     	      		 }
     	      		 else{
     	          		 int number = Integer.parseInt(numberInputField.getText());
     	          		 if(number>prop.getPropNumber()) {
-<<<<<<< Updated upstream
-							new Dialog("",skin,"dialog").text("Sorry, you don't have enough items!").button("Confirm", false).show(stage);
-    	          			 numberInputField.setText("");
-    	          		 }
-    	          		 else {
-							new Dialog("",skin,"dialog"){
-								 protected void result(Object object) {
-
-									if (object.equals(true)) {
-
-										thisInputWindow.setVisible(false);
-									}
-								}
-							 }.text("Successfully used "+prop.getName()+" x "+numberInputField.getText()+"! Stamina restored by "+prop.getValue()*Integer.parseInt(numberInputField.getText())).button("Confirm", true).show(stage);
-=======
     	          			 new Dialog("",skin,"dialog").text("Xin lỗi,đò ăn không đủ!").button("Xác nhận", false).show(stage);
     	          			 numberInputField.setText("");
     	          		 }
@@ -597,7 +421,6 @@ public class InputWindow extends Window{
                  					}
                  				}
                  			 }.text("Ăn thành công"+prop.getName()+"x"+numberInputField.getText()+"!"+"thể lực phục hồi"+prop.getValue()*Integer.parseInt(numberInputField.getText())).button("确认", true).show(stage);
->>>>>>> Stashed changes
     	          			 numberInputField.setText("");
     	          			 prop.setPropNumber(prop.getPropNumber()-number);
     	          			 if(user.getHp()+number*prop.getValue()<=100)
@@ -620,15 +443,9 @@ public class InputWindow extends Window{
 	    public void act(float delta) {
 	    	super.act(delta);
 	    	if(fruit!=null)
-<<<<<<< Updated upstream
-				fruitNumberLabel.setText("Quantity: "+fruit.getFruitNumber());
-	    	else if(prop!=null&&propNumberLabel!=null)
-				propNumberLabel.setText("Quantity: "+prop.getPropNumber());
-=======
 	    		fruitNumberLabel.setText("Số lượng: "+fruit.getFruitNumber());
 	    	else if(prop!=null&&propNumberLabel!=null)
 	    		propNumberLabel.setText("Kho hàng: "+prop.getPropNumber());
->>>>>>> Stashed changes
 
 
 		}

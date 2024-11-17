@@ -16,13 +16,8 @@ public class User {
     private int hp;//máu
     private boolean faint;//trạng thái,thức/ngủ
     private boolean sleep;//state，thức/ngủ
-<<<<<<< Updated upstream
-    private float positionX; //vị trí x
-    private float positionY; //vị trí y
-=======
     private float positionX;
     private float positionY;
->>>>>>> Stashed changes
 
     public User() {
         super();

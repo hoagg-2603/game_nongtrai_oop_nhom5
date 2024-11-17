@@ -9,11 +9,8 @@ import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.screens.PlayScreen;
 
 public class Changewindow extends Window {
-<<<<<<< Updated upstream
-=======
     //修改人物信息的界面
 
->>>>>>> Stashed changes
     private Label password;
     private Label verifypass;
     private Label username;
@@ -36,19 +33,11 @@ public class Changewindow extends Window {
         this.setVisible(true);
         this.setSize(950,800);
         this.setPosition(Gdx.graphics.getWidth()/5, Gdx.graphics.getHeight()/4);
-<<<<<<< Updated upstream
-        username=new Label("Username:",skin);
-        pic=new Label("Avatar:",skin);
-        password=new Label("New Password:",skin);
-        verifypass=new Label("Confirm password:",skin);
-        passpow=new Label("Password strength:",skin);
-=======
         username=new Label("Biệt danh:",skin);
         pic=new Label("Avatar:",skin);
         password=new Label("Mật khẩu mới:",skin);
         verifypass=new Label("Xác nhận mật khẩu:",skin);
         passpow=new Label("Đọ mạnh mật khẩu:",skin);
->>>>>>> Stashed changes
         passwordfield=new TextField("",skin);
         passwordfield.setSize(250,50);
         passwordfield.setAlignment(Align.center);
@@ -121,11 +110,8 @@ public class Changewindow extends Window {
                 img1.setSize(100, 100);
                 img1.setPosition(500, 450);
                 imageFlag=1;
-<<<<<<< Updated upstream
-=======
 
 
->>>>>>> Stashed changes
             }
         });
         img2.addListener(new ClickListener() {
@@ -213,10 +199,7 @@ public class Changewindow extends Window {
         this.addActor(no);
     }
     public void initial() {
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     	img1.setPosition(400,500);
         img2.setPosition(500,500);
         img3.setPosition(600,500);
