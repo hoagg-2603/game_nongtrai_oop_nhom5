@@ -60,7 +60,7 @@ public class FarmGame extends Game {
             try {
                 SQLConnector.getStmt().close();
                 SQLConnector.getConn().close();
-                System.out.println("Kết nối cơ sở dữ liệu đã đóng！");
+                System.out.println("Kết nối cơ sở dữ liệu đã đóng!");
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -67,8 +67,8 @@ public class StatusUI extends Table {
         downTable.row();
         downTable.add(moneyLabel).align(Align.left);
 
-        nameLabel=new Label("Tên："+playScreen.getUser().getUserName(),playScreen.getSkin());
-        levelLabel=new Label("Cấp độ："+playScreen.getUser().getLevel(), playScreen.getSkin());
+        nameLabel=new Label("Tên:"+playScreen.getUser().getUserName(),playScreen.getSkin());
+        levelLabel=new Label("Cấp độ: "+playScreen.getUser().getLevel(), playScreen.getSkin());
         leftTable=new Table();
         leftTable.add(nameLabel).align(Align.left);
         leftTable.row();
@@ -208,11 +208,11 @@ public class StatusUI extends Table {
     		playScreen.getUser().LevelUp();
 
 
-    	hpLabel.setText("Thể lực："+playScreen.getUser().getHp()+"/100");
-    	nameLabel.setText("Tên："+playScreen.getUser().getUserName());
-    	expLabel.setText("Kinh nghiệm："+playScreen.getUser().getExp()+"/"+playScreen.getUser().getMaxExp());
-    	levelLabel.setText("Cấp độ："+playScreen.getUser().getLevel());
-    	moneyLabel.setText("Tiền："+playScreen.getUser().getMoney());
+    	hpLabel.setText("Thể lực:      "+playScreen.getUser().getHp()+"/100");
+    	nameLabel.setText("Tên: "+playScreen.getUser().getUserName());
+    	expLabel.setText("Kinh nghiệm:   "+playScreen.getUser().getExp()+"/"+playScreen.getUser().getMaxExp());
+    	levelLabel.setText("Cấp độ:   "+playScreen.getUser().getLevel());
+    	moneyLabel.setText("Tiền: "+playScreen.getUser().getMoney());
     }
     public Color getAmbientLighting() {
         return ambient;
