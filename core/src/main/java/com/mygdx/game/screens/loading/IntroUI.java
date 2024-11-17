@@ -25,8 +25,8 @@ public class IntroUI extends Window {
         table.setSize(500,500);
         table.setPosition( Gdx.graphics.getWidth()/2-225, Gdx.graphics.getHeight()/2-225);
 
-        label=new Label("Cài đặt có thể được sử dụng để tùy chỉnh、hình đại diện、âm nhạc\nSử dụng。\ncác phím lên, xuống, trái, phải\nđể di chuyển，Có thể ngủ hoặc bổ xung thức ăn\nđể khôi phục thể lực。" +
-                "\nNhân vật di chuyển trên bản đồ，có thể nói chuyện với NPC\nCây trồng cần được tưới nươc。\nNếu không，sẽ bị héo úa。\n",skin);
+        label=new Label("       Cài đặt có thể được sử dụng để \n          tùy chỉnh,hình đại diện,âm nhạc\n      Sử dụng các phím lên, xuống, trái, phải\n     để di chuyển,Có thể ngủ hoặc bổ xung \n        thức ănđể khôi phục thể lực" +
+                "\n       Nhân vật di chuyển trên bản đồ,\n         có thể nói chuyện với NPC\n       Cây trồng cần được tưới nươc\n       Nếu không, sẽ bị héo úa\n",skin);
 
         quitButton = new TextButton("Đóng", skin);
         quitButton.setTransform(true);

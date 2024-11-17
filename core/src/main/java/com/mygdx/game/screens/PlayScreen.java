@@ -286,7 +286,7 @@ public class PlayScreen implements Screen {
                 user.setHp(100);
                 player.setCurrentPosition(700, 600);
                 worldTime.setRealToTimerRatio(300);
-                new Dialog("",skin,"dialog").text("Sau một đêm nghỉ ngơi, sức khỏe của bạn đã hồi phục！").button("Xác nhận", true).show(stage);
+                new Dialog("",skin,"dialog").text("Sau một đêm nghỉ ngơi, sức khỏe của bạn đã hồi phục!").button("Xác nhận", true).show(stage);
 
             }
             showSleep=false;
@@ -311,7 +311,7 @@ public class PlayScreen implements Screen {
                     }
 
                 }
-            }.text("Đã khuya. Bạn có muốn về nhà nghỉ ngơi không？").button("Đi ngủ thôi！", true).button("Không! Tôi vẫn còn sức！",false).show(stage);
+            }.text("Đã khuya. Bạn có muốn về nhà nghỉ ngơi không?").button("Đi ngủ thôi!", true).button("Không! Tôi vẫn còn sức!",false).show(stage);
 
         }
 
@@ -329,7 +329,7 @@ public class PlayScreen implements Screen {
                     }
 
                 }
-            }.text("Do làm việc quá sức, bạn đã ngã quỵ！").button("Xác nhận", true).show(stage);
+            }.text("Do làm việc quá sức, bạn đã ngã quỵ!").button("Xác nhận", true).show(stage);
             user.setFaint(true);
             user.setSleep(true);
             player.faint();
