@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 // cửa sổ exit
+=======
+>>>>>>> Stashed changes
 package com.mygdx.game.screens.play;
 
 import com.badlogic.gdx.Gdx;
@@ -15,9 +18,15 @@ public class Exitwindow extends Window {
         this.setVisible(true);
         this.setSize(400,200);
         this.setPosition(Gdx.graphics.getWidth()/3, Gdx.graphics.getHeight()/3);
+<<<<<<< Updated upstream
         verify=new Label("Change account?", skin);
         yes=new TextButton("Yes",skin);
         no=new TextButton("No",skin);
+=======
+        verify=new Label("Chuyển đổi tài khoản", skin);
+        yes=new TextButton("Có",skin);
+        no=new TextButton("Không",skin);
+>>>>>>> Stashed changes
         this.add(verify).colspan(2).padBottom(50);
         this.row();
         this.add(yes).padRight(50);

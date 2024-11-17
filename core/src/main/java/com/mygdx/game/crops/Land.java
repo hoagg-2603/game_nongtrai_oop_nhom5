@@ -15,6 +15,7 @@ public class Land {
     private int fruitNum;// Số quả
     private boolean isFertilized;//Việc bón phân
 
+<<<<<<< Updated upstream
     private boolean pickable=false; //Có thể hái được không
     private boolean seedable=true; //Có thể gieo hạt được không
 
@@ -25,6 +26,18 @@ public class Land {
 
     public Land(int landID){
         this.landID=landID; // Gán ID đất
+=======
+    private boolean pickable=false;
+    private boolean seedable=true;
+
+
+    public Land() {
+        super();
+    }
+    public Land(int landID)
+    {
+        this.landID=landID;
+>>>>>>> Stashed changes
     }
 
     public Land(int landID, int cropID, double growTime, double startTime,double waterTime, int nowStage, boolean isPerished, boolean isBugged, boolean isWeeded, boolean isWatered, int noWaterCount, int fruitNum) {
@@ -42,6 +55,7 @@ public class Land {
         this.fruitNum = fruitNum;
     }
 
+<<<<<<< Updated upstream
     public int getLandID() { // Hàm lấy ID đất
         return landID; // Trả về ID đất
     }
@@ -159,5 +173,124 @@ public class Land {
 
     public void setFertilized(boolean fertilized) { // Hàm thiết lập việc bón phân
         isFertilized = fertilized; // Gán việc bón phân
+=======
+    public int getLandID() {
+        return landID;
+    }
+
+    public void setLandID(int landID) {
+        this.landID = landID;
+    }
+
+    public int getCropID() {
+        return cropID;
+    }
+
+    public void setCropID(int cropID) {
+        this.cropID = cropID;
+    }
+
+    public double getGrowTime() {
+        return growTime;
+    }
+
+    public void setGrowTime(double growTime) {
+        this.growTime = growTime;
+    }
+
+    public int getNowStage() {
+        return nowStage;
+    }
+
+    public void setNowStage(int nowStage) {
+        this.nowStage = nowStage;
+    }
+
+
+    public boolean isBugged() {
+        return isBugged;
+    }
+
+    public void setBugged(boolean bugged) {
+        isBugged = bugged;
+    }
+
+    public boolean isWeeded() {
+        return isWeeded;
+    }
+
+    public void setWeeded(boolean weeded) {
+        isWeeded = weeded;
+    }
+
+    public boolean isWatered() {
+        return isWatered;
+    }
+
+    public void setWatered(boolean watered) {
+        isWatered = watered;
+    }
+
+    public int getNoWaterCount() {
+        return noWaterCount;
+    }
+
+    public void setNoWaterCount(int noWaterCount) {
+        this.noWaterCount = noWaterCount;
+    }
+
+    public int getFruitNum() {
+        return fruitNum;
+    }
+
+    public void setFruitNum(int fruitNum) {
+        this.fruitNum = fruitNum;
+    }
+
+    public boolean isPerished() {
+        return isPerished;
+    }
+
+    public void setPerished(boolean perished) {
+        isPerished = perished;
+    }
+    public double getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(double startTime) {
+        this.startTime = startTime;
+    }
+    public boolean isPickable() {
+        return pickable;
+    }
+
+    public void setPickable(boolean pickable) {
+        this.pickable = pickable;
+    }
+
+    public boolean isSeedable() {
+        return seedable;
+    }
+
+    public void setSeedable(boolean seedable) {
+        this.seedable = seedable;
+    }
+
+    public double getWaterTime() {
+        return waterTime;
+    }
+
+    public void setWaterTime(double waterTime) {
+        this.waterTime = waterTime;
+    }
+
+    public boolean isFertilized() {
+        return isFertilized;
+    }
+
+    public void setFertilized(boolean fertilized) {
+        isFertilized = fertilized;
+>>>>>>> Stashed changes
     }
 }

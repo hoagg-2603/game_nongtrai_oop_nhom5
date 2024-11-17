@@ -40,10 +40,17 @@ public class RegisterUI extends Group {
     public RegisterUI(Skin skin) {
 
         //Khởi tạolabel
+<<<<<<< Updated upstream
         userIDLabel = new Label("Username:", skin);
         passwordLabel = new Label("Password:", skin);
         passpow=new Label("Password strength:",skin);
         verifyPassLabel = new Label("Confirm password:", skin);
+=======
+        userIDLabel = new Label("Tài khoản:", skin);
+        passwordLabel = new Label("Mật khẩu:", skin);
+        passpow=new Label("Độ mạnh mật khẩu:",skin);
+        verifyPassLabel = new Label("Xác nhận mật khẩu:", skin);
+>>>>>>> Stashed changes
 
 
         //Có 4 trường thông tin：Số tk+Tên người dùng+Mật khẩu+Xác nhận mật khẩu
@@ -68,6 +75,7 @@ public class RegisterUI extends Group {
         // Sử dụng * thay cho kí tự mật khẩu được nhập
         passwordTextField.setPasswordCharacter('*');
         verifyPassTextField.setPasswordCharacter('*');
+<<<<<<< Updated upstream
         userIDTextField.setMessageText("5 - 12 characters, letters and numbers only");
         passwordTextField.setMessageText("Password must be greater than 5");
         verifyPassTextField.setMessageText("Password must be greater than 5");
@@ -75,6 +83,15 @@ public class RegisterUI extends Group {
         registerButton = new TextButton("Sign up", skin);
         registerButton.setTransform(true);
         cancelButton = new TextButton("Cancel", skin);
+=======
+        userIDTextField.setMessageText("5-12kí tự，bao gồm cả chữ và số");
+        passwordTextField.setMessageText("Độ dài mật khẩu phải lớn hơn 5");
+        verifyPassTextField.setMessageText("Độ dài mật khẩu phải lớn hơn 5");
+
+        registerButton = new TextButton("Đăng ký", skin);
+        registerButton.setTransform(true);
+        cancelButton = new TextButton("Hủy bỏ", skin);
+>>>>>>> Stashed changes
         cancelButton.setTransform(true);
 
         buttonTable = new Table();
@@ -83,16 +100,28 @@ public class RegisterUI extends Group {
         buttonTable.add(cancelButton).padLeft(100).padRight(80);
         buttonTable.setPosition(50, -350);
 
+<<<<<<< Updated upstream
         userIDLabel.setPosition(-200,118);
         userIDTextField.setPosition(-100,100);
         passwordLabel.setPosition(-200,18);
         passwordTextField.setPosition(-100,0);
         passpow.setPosition(-250,-88);
+=======
+        userIDLabel.setPosition(-250,100);
+        userIDTextField.setPosition(-100,100);
+        passwordLabel.setPosition(-250,0);
+        passwordTextField.setPosition(-100,0);
+        passpow.setPosition(-250,-100);
+>>>>>>> Stashed changes
         pass1.setPosition(-100,-100);
         pass2.setPosition(-100,-100);
         pass3.setPosition(-100,-100);
         pass4.setPosition(-100,-100);
+<<<<<<< Updated upstream
         verifyPassLabel.setPosition(-250,-182);
+=======
+        verifyPassLabel.setPosition(-250,-200);
+>>>>>>> Stashed changes
         verifyPassTextField.setPosition(-100,-200);
         pass2.setVisible(false);
         pass3.setVisible(false);
@@ -115,6 +144,7 @@ public class RegisterUI extends Group {
 
     }
 
+<<<<<<< Updated upstream
     public TextButton getRegisterButton() { // Hàm lấy nút đăng ký
         return registerButton;
     }
@@ -135,6 +165,28 @@ public class RegisterUI extends Group {
         return verifyPassTextField;
     }
     public  Image getPass1(){ 
+=======
+    public TextButton getRegisterButton() {
+        return registerButton;
+    }
+
+    public TextButton getCancelButton() {
+        return cancelButton;
+    }
+
+    public TextField getUserIDTextField() {
+        return userIDTextField;
+    }
+
+    public TextField getPasswordTextField() {
+        return passwordTextField;
+    }
+
+    public TextField getVerifyPassTextField() {
+        return verifyPassTextField;
+    }
+    public  Image getPass1(){
+>>>>>>> Stashed changes
         return pass1;
     }
     public  Image getPass2(){

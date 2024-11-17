@@ -16,9 +16,12 @@ public class Lwjgl3Launcher {
 
         new Lwjgl3Application(new FarmGame(), config);
         Gdx.app.setLogLevel(Application.LOG_DEBUG); // Đặt mức độ log
+<<<<<<< Updated upstream
         //LOG_NONE: Không ghi log.
         //LOG_ERROR: Chỉ ghi lại các lỗi.
         //LOG_INFO: Ghi lại thông tin chung.
         //LOG_DEBUG: Ghi lại thông tin chi tiết để phục vụ việc gỡ lỗi.
+=======
+>>>>>>> Stashed changes
     }
 }

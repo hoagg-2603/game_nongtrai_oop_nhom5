@@ -38,9 +38,15 @@ public class LoginUI extends Group {
     public LoginUI(Skin skin){
         this.skin=skin;
 
+<<<<<<< Updated upstream
         userIDLabel=new Label("Username:", skin);
         userIDLabel.setAlignment(Align.left);
         passwordLabel=new Label("Password:",skin);
+=======
+        userIDLabel=new Label("Tài khỏa:", skin);
+        userIDLabel.setAlignment(Align.left);
+        passwordLabel=new Label("Mật khẩu:",skin);
+>>>>>>> Stashed changes
         passwordLabel.setAlignment(Align.left);
 
         userIDTextField=new TextField("",skin);
@@ -52,7 +58,11 @@ public class LoginUI extends Group {
         passwordTextField.setPasswordMode(true);
         passwordTextField.setPasswordCharacter('*');
 
+<<<<<<< Updated upstream
         remember=new CheckBox("Remember password?",skin);
+=======
+        remember=new CheckBox("Ghi nhớ mật khẩu",skin);
+>>>>>>> Stashed changes
 
         if(Check.checkLocalUserExist())
         {
@@ -62,8 +72,15 @@ public class LoginUI extends Group {
             passwordTextField.setText(user.getPass());
         }
 
+<<<<<<< Updated upstream
         loginButton=new TextButton("Log in", skin);
         registerButton=new TextButton("Sign up", skin);
+=======
+        loginButton=new TextButton("Đăng nhập", skin);
+        registerButton=new TextButton("Đăng ký", skin);
+
+
+>>>>>>> Stashed changes
 
 
         loginTable=new Table();
