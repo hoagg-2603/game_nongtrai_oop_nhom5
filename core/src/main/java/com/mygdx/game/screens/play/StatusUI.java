@@ -1,5 +1,7 @@
 package com.mygdx.game.screens.play;
 
+import java.lang.classfile.Label;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -208,11 +210,11 @@ public class StatusUI extends Table {
     		playScreen.getUser().LevelUp();
 
 
-    	hpLabel.setText("Thể lực："+playScreen.getUser().getHp()+"/100");
-    	nameLabel.setText("Tên："+playScreen.getUser().getUserName());
-    	expLabel.setText("Kinh nghiệm："+playScreen.getUser().getExp()+"/"+playScreen.getUser().getMaxExp());
-    	levelLabel.setText("Cấp độ："+playScreen.getUser().getLevel());
-    	moneyLabel.setText("Tiền："+playScreen.getUser().getMoney());
+    	hpLabel.setText("Thể lực:         "+playScreen.getUser().getHp()+"/100");
+    	nameLabel.setText("Tên: "+playScreen.getUser().getUserName());
+    	expLabel.setText("Kinh nghiệm: "+playScreen.getUser().getExp()+"/"+playScreen.getUser().getMaxExp());
+    	levelLabel.setText("Cấp độ:"+playScreen.getUser().getLevel());
+    	moneyLabel.setText("Tiền: "+playScreen.getUser().getMoney());
     }
     public Color getAmbientLighting() {
         return ambient;
