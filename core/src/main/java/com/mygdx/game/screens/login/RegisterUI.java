@@ -83,7 +83,7 @@ public class RegisterUI extends Group {
         buttonTable.add(cancelButton).padLeft(100).padRight(80);
         buttonTable.setPosition(50, -350);
 
-        userIDLabel.setPosition(-250,100);
+        userIDLabel.setPosition(-100,100);
         userIDTextField.setPosition(-100,100);
         passwordLabel.setPosition(-250,0);
         passwordTextField.setPosition(-100,0);

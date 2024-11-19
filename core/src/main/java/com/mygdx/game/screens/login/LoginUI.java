@@ -5,17 +5,18 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.crops.User;
+import com.mygdx.game.screens.play.StatusUI;
 import com.mygdx.game.tools.Check;
 import com.mygdx.game.tools.DataManage;
+import javax.swing.*;
 
 public class LoginUI extends Group {
     //Giao diện đăng nhập
 
     private Skin skin;
-
     private Table loginTable;
     private Table buttonTable;
-
+    private JFrame jframe;
     public TextField getUserIDTextField() {
         return userIDTextField;
     }
@@ -37,12 +38,13 @@ public class LoginUI extends Group {
 
     public LoginUI(Skin skin){
         this.skin=skin;
-
         userIDLabel=new Label("Tài khỏa:", skin);
         userIDLabel.setAlignment(Align.left);
         passwordLabel=new Label("Mật khẩu:",skin);
         passwordLabel.setAlignment(Align.left);
-
+//        jframe.setSize(400,400);
+//        jframe.setVisible(true);
+//        jframe.setLayout(null);
         userIDTextField=new TextField("",skin);
         userIDTextField.setAlignment(Align.center);
 
@@ -85,7 +87,7 @@ public class LoginUI extends Group {
         this.addActor(loginTable);
         loginTable.setPosition(0,0);
         this.addActor(buttonTable);
-        buttonTable.setPosition(0,-200);
+        buttonTable.setPosition(50,-200);
         this.setPosition(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()/2);
 
 
