@@ -1,6 +1,6 @@
 package com.mygdx.game.screens.play;
 
-import java.lang.classfile.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
