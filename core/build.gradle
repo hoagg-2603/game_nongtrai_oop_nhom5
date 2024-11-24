@@ -2,6 +2,7 @@
 eclipse.project.name = appName + '-core'
 
 dependencies {
+  implementation 'mysql:mysql-connector-java:8.0.32'
   api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
   api "com.badlogicgames.gdx:gdx:$gdxVersion"
 

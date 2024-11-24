@@ -7,11 +7,10 @@ public class SQLConnector {
     //Lớp trình tải trình kết nối cơ sở dữ liệu
 
 
-    //Cơ sở dữ liệu đám mây Tencent, miễn là bạn được kết nối với Internet, bạn có thể truy cập vào tài khoản người dùng được chỉ định (chỉ cơ sở dữ liệu JavaGame mới có quyền chọn, cập nhật và chèn)
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://cdb-mbj2rcby.cd.tencentcdb.com:10009/JavaGame?autoReconnect=true&amp;autoReconnectForPools=true";
-    static final String USER = "javagameuser";
-    static final String PASS = "javakaihua123";
+    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12746518?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC";
+    static final String USER = "sql12746518";
+    static final String PASS = "iAP5dSdx8u";
     private static Connection conn = null;
 
     private static Statement stmt = null;
