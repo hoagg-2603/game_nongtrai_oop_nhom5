@@ -10,10 +10,12 @@
  <tileset firstgid="2367" source="base_out_atlas.tsx"/>
  <tileset firstgid="3391" source="Spritesheet.tsx"/>
  <tileset firstgid="3586" source="library.tsx"/>
- <tileset firstgid="4162" source="房子.tsx"/>
+ <tileset firstgid="4162" source="school.tsx"/>
  <tileset firstgid="4451" source="LPC_Ancient_Greece_Architecture.tsx"/>
  <tileset firstgid="4851" source="arabic.tsx"/>
- <tileset firstgid="4947" source="tiane.tsx"/>
+ <tileset firstgid="4947" name="tiane" tilewidth="32" tileheight="32" tilecount="64" columns="8">
+  <image source="assets/tiane.png" width="260" height="261"/>
+ </tileset>
  <tileset firstgid="5011" source="10102017.tsx"/>
  <tileset firstgid="5431" source="111111.tsx"/>
  <tileset firstgid="5533" source="4.tsx"/>
