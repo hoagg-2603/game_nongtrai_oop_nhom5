@@ -153,7 +153,7 @@ public class SlotUI extends Table{
 	    	   }
 	        });
         }
-        else if(type=="bagProp"){//背包里的道具部分需要创建输入窗
+        else if(type=="bagProp"){
         	texture=new Texture(Gdx.files.internal(prop.getPic()));
             Image propImage=new Image(texture);
             propImage.setSize(80, 80);
@@ -200,7 +200,7 @@ public class SlotUI extends Table{
     }
 
     @Override
-    public void act(float delta){//时时更新slot中库存label值
+    public void act(float delta){
     	super.act(delta);
     	if(crop!=null&&seedNumberLabel!=null)
     		seedNumberLabel.setText("Tồn kho: "+crop.getCropNumber());

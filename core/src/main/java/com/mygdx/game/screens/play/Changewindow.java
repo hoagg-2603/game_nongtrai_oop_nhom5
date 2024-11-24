@@ -9,7 +9,6 @@ import com.badlogic.gdx.utils.Align;
 import com.mygdx.game.screens.PlayScreen;
 
 public class Changewindow extends Window {
-    //修改人物信息的界面
 
     private Label password;
     private Label verifypass;
@@ -37,7 +36,7 @@ public class Changewindow extends Window {
         pic=new Label("Avatar:",skin);
         password=new Label("Mật khẩu mới:",skin);
         verifypass=new Label("Xác nhận mật khẩu:",skin);
-        passpow=new Label("Đọ mạnh mật khẩu:",skin);
+        passpow=new Label("Độ mạnh mật khẩu:",skin);
         passwordfield=new TextField("",skin);
         passwordfield.setSize(250,50);
         passwordfield.setAlignment(Align.center);

@@ -84,11 +84,11 @@ public class LandView extends Actor{
     public void pick(){//Hàm thu hoạch
         if(land.getCropID()==-1)
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không có cây trồng trên mảnh đất này！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Không có cây trồng trên mảnh đất này!").button("Xác nhận", true).show(playScreen.getStage());
         }
         else if(!playScreen.getUser().isActable(3))
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
 
         }
         else if(land.isPickable()) {
@@ -116,7 +116,7 @@ public class LandView extends Actor{
     public void shovel(){//铲除函数
         if(land.getCropID()==-1)
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không cần xới đất！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Không cần xới đất!").button("Xác nhận", true).show(playScreen.getStage());
         }
         else if(!playScreen.getUser().isActable(4))
         {

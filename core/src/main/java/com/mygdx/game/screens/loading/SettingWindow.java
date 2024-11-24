@@ -35,12 +35,12 @@ public class SettingWindow extends Window {
         img6=new Image(new Texture(Gdx.files.internal( "../assets/image/icon/6.png")));
         img6.setSize(80,80);
 
-        username=new Label("biệt danh của bạn:",skin);
-        pic=new Label("hình đại diện của bạn:",skin);
-        keepButton=new TextButton("Giúp",skin);
+        username=new Label("Chọn biệt danh của bạn:",skin);
+        pic=new Label("Chọn hình đại diện của bạn:",skin);
+        keepButton=new TextButton("OK",skin);
         textField = new TextField("", skin);
         textField.setSize(300,50);
-        textField.setMessageText("biệt danh");
+        textField.setMessageText("Biệt danh");
         textField.setAlignment(Align.center);
 
         username.setPosition(100,300);

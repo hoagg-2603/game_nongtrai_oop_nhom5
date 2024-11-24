@@ -61,21 +61,21 @@ public class InputWindow extends Window{
 
         	    String regex="^[1-9]\\d*$";
         		if(!numberInputField.getText().matches(regex)) {
-           		new Dialog("",skin,"dialog").text("Tôi không hiểu mong muốn của bạn, Vui lòng thực hiện lại!").button("Xác nhận", false).show(stage);
+           		new Dialog("",skin,"dialog").text("Chưa hiểu ý bạn sao á. Mình quay lại nha!").button("Xác nhận", false).show(stage);
            		numberInputField.setText("");
         		}
            		else if(numberInputField.getText().length()>2) {
-           		new Dialog("",skin,"dialog").text("Số lượng vượt quá giới hạn mua!").button("Xác nhận", false).show(stage);
+           		new Dialog("",skin,"dialog").text("Quá giới hạn mua rùi =)))").button("Xác nhận", false).show(stage);
               		numberInputField.setText("");
            		}
            		else{
                		int number = Integer.parseInt(numberInputField.getText());
                		if(number*crop.getSeedPrice()>user.getMoney()) {
-               			new Dialog("",skin,"dialog").text("Xin lỗi,không đủ tiền!").button("Xác nhận", false).show(stage);
+               			new Dialog("",skin,"dialog").text("Có đủ tiền đâu mà mua =)))").button("Xác nhận", false).show(stage);
                			numberInputField.setText("");
                		}
                		else if(user.getLevel()<crop.getBuyLevel()) {
-               			new Dialog("",skin,"dialog").text("Xin lỗi,cấp bậc hiện tại chưa đủ！").button("Xác nhận", false).show(stage);
+               			new Dialog("",skin,"dialog").text("Chưa đủ level đâu nhé bro!").button("Xác nhận", false).show(stage);
                			numberInputField.setText("");
                		}
                		else {
@@ -86,7 +86,7 @@ public class InputWindow extends Window{
         							thisInputWindow.setVisible(false);;//Nhập
         						}
         					}
-        				}.text("Đã mua thành công"+crop.getName()+"x"+numberInputField.getText()).button("确认", true).show(stage);
+        				}.text("Đã mua thành công"+crop.getName()+"x"+numberInputField.getText()).button("Xác nhận", true).show(stage);
                			numberInputField.setText("");
                			crop.setCropNumber(crop.getCropNumber()+number);
                			user.setMoney(user.getMoney()-number*crop.getSeedPrice());
@@ -176,11 +176,11 @@ public class InputWindow extends Window{
    			     String regex="^[1-9]\\d*$";
    			     if(!numberInputField.getText().matches(regex)) {
 
-      			     new Dialog("",skin,"dialog").text("Tôi không hiểu mong muốn cửa bạn，vui lòng thực hiện lại!").button("Xác nhận", true).show(stage);
+      			     new Dialog("",skin,"dialog").text("Chưa hiểu ý bạn lắm á, thực hiện lại đi!").button("Xác nhận", true).show(stage);
       			     numberInputField.setText("");
    			     }
       			 else if(numberInputField.getText().length()>3) {
-      			     new Dialog("",skin,"dialog").text("Quá nhiều,vượt quá số lượng còn tồn!").button("Xác nhận", true).show(stage);
+      			     new Dialog("",skin,"dialog").text("Có đủ tồn đâu bro =))").button("Xác nhận", true).show(stage);
          			 numberInputField.setText("");
       			 }
       			 else{
@@ -189,7 +189,7 @@ public class InputWindow extends Window{
           			 if(number>fruit.getFruitNumber()) {
 
 
-          			     new Dialog("",skin,"dialog").text("Xin lỗi, số lượng trái cây của bạn không đủ!").button("Xác nhận", true).show(stage);
+          			     new Dialog("",skin,"dialog").text("Có đủ trái cây đâu bro!").button("Xác nhận", true).show(stage);
           				 numberInputField.setText("");
           			 }
           			 else {
@@ -202,7 +202,7 @@ public class InputWindow extends Window{
             						thisInputWindow.setVisible(false);;//Nhập
             					}
             				}
-            			 }.text("Đã bán thành công!Tiền+"+Integer.parseInt(numberInputField.getText())*fruit.getFruitPrice()).button("Số lượng", true).show(stage);
+            			 }.text("Đã bán thành công! Tiền+"+Integer.parseInt(numberInputField.getText())*fruit.getFruitPrice()).button("Số lượng", true).show(stage);
           				 numberInputField.setText("");
           				 fruit.setFruitNumber(fruit.getFruitNumber()-number);
           				 user.setMoney(user.getMoney()+number*fruit.getFruitPrice());
@@ -340,22 +340,22 @@ public class InputWindow extends Window{
 
     	   			 String regex="^[1-9]\\d*$";
     	   			 if(!numberInputField.getText().matches(regex)) {
-    	      			 new Dialog("",skin,"dialog").text("Tôi không hiểu mong muốn cửa bạn,vui lòng thực hiện lại!").button("Xác nhận", true).show(stage);
+    	      			 new Dialog("",skin,"dialog").text("Chưa hiểu ý bạn lắm á =)))").button("Xác nhận", true).show(stage);
     	      			 numberInputField.setText("");
     	   			 }
     	      		 else if(numberInputField.getText().length()>3) {
-    	      			 new Dialog("",skin,"dialog").text("Quá nhiều,vượt quá giới hạn mua!").button("Xác nhận", true).show(stage);
+    	      			 new Dialog("",skin,"dialog").text("Vượt quá giới hạn mua rùi!").button("Xác nhận", true).show(stage);
     	         		 numberInputField.setText("");
     	      		 }
     	      		 else{
     	          		 int number = Integer.parseInt(numberInputField.getText());
     	          		 if(number*prop.getPropPrice()>user.getMoney()) {
 
-    	          			 new Dialog("",skin,"dialog").text("Xin lỗi,bạn không đủ tiền!").button("Xác nhận", true).show(stage);
+    	          			 new Dialog("",skin,"dialog").text("Có đủ tiền đâu mà mua =)))").button("Xác nhận", true).show(stage);
     	          			 numberInputField.setText("");
     	          		 }
     	          		else if(user.getLevel()<prop.getBuyLevel()) {
-                   			new Dialog("",skin,"dialog").text("Xin lỗi,cấp độ của bạn chưa đủ！").button("Xác nhận", false).show(stage);
+                   			new Dialog("",skin,"dialog").text("Chưa đủ level nhé =)))").button("Xác nhận", false).show(stage);
                    			numberInputField.setText("");
                    		}
     	          		else {
@@ -364,7 +364,7 @@ public class InputWindow extends Window{
 
                  					if (object.equals(true)) {
 
-                 						thisInputWindow.setVisible(false);;//取此窗口
+                 						thisInputWindow.setVisible(false);//Nhập
                  					}
                  				}
                  			 }.text("Đã mua thành công"+prop.getName()+"x"+numberInputField.getText()).button("Xác nhận", true).show(stage);
@@ -398,17 +398,17 @@ public class InputWindow extends Window{
     	       	 public void clicked(InputEvent event,float x, float y) {
     	   			 String regex="^[1-9]\\d*$";
     	   			 if(!numberInputField.getText().matches(regex)) {
-    	      			 new Dialog("",skin,"dialog").text("Tôi không hiểu mong muốn cửa bạn,vui lòng thực hiện lại!").button("Xác nhận", false).show(stage);
+    	      			 new Dialog("",skin,"dialog").text("Chưa hiểu ý bạn lắm á =)))").button("Xác nhận", false).show(stage);
     	      			 numberInputField.setText("");
     	   			 }
     	      		 else if(numberInputField.getText().length()>3) {
-    	      			 new Dialog("",skin,"dialog").text("Quá nhiều,vượt quá giới hạn sử dụng!").button("Xác nhận", false).show(stage);
+    	      			 new Dialog("",skin,"dialog").text("Vượt quá giới hạn sử dụng rùi!").button("Xác nhận", false).show(stage);
     	         	     numberInputField.setText("");
     	      		 }
     	      		 else{
     	          		 int number = Integer.parseInt(numberInputField.getText());
     	          		 if(number>prop.getPropNumber()) {
-    	          			 new Dialog("",skin,"dialog").text("Xin lỗi,đò ăn không đủ!").button("Xác nhận", false).show(stage);
+    	          			 new Dialog("",skin,"dialog").text("Có đủ đồ ăn đâu -((").button("Xác nhận", false).show(stage);
     	          			 numberInputField.setText("");
     	          		 }
     	          		 else {
@@ -420,7 +420,7 @@ public class InputWindow extends Window{
                  						thisInputWindow.setVisible(false);
                  					}
                  				}
-                 			 }.text("Ăn thành công"+prop.getName()+"x"+numberInputField.getText()+"!"+"thể lực phục hồi"+prop.getValue()*Integer.parseInt(numberInputField.getText())).button("确认", true).show(stage);
+                 			 }.text("Ăn thành công"+prop.getName()+"x"+numberInputField.getText()+"!"+"thể lực phục hồi"+prop.getValue()*Integer.parseInt(numberInputField.getText())).button("Xác nhận", true).show(stage);
     	          			 numberInputField.setText("");
     	          			 prop.setPropNumber(prop.getPropNumber()-number);
     	          			 if(user.getHp()+number*prop.getValue()<=100)

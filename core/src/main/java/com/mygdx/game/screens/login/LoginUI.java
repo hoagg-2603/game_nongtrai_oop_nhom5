@@ -38,7 +38,7 @@ public class LoginUI extends Group {
 
     public LoginUI(Skin skin){
         this.skin=skin;
-        userIDLabel=new Label("Tài khỏa:", skin);
+        userIDLabel=new Label("Tài khoản:", skin);
         userIDLabel.setAlignment(Align.left);
         passwordLabel=new Label("Mật khẩu:",skin);
         passwordLabel.setAlignment(Align.left);

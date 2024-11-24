@@ -84,12 +84,12 @@ public class StoreUI extends Window{
 		this.setBackground(windowdrable);
 
 
-	    titleLabel=new Label("商店",skin,"title");//Đặt tiêu đề của cửa sổ
+	    titleLabel=new Label("Cửa hàng",skin,"title");//Đặt tiêu đề của cửa sổ
 	    titleLabel.setScale(0.5f);
 	    this.addActor(titleLabel);
 	    titleLabel.setColor(Color.BLACK);
 
-		seedButton=new TextButton("种子",skin);
+		seedButton=new TextButton("Hạt giống",skin);
 		seedButton.setTransform(true);
         seedButton.setScale(1);
         seedButton.addListener(new ClickListener(Buttons.LEFT){//Thiết lập lắng nghe, khi nhấn sẽ chuyển sang trang hạt giống

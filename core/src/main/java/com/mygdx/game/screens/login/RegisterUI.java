@@ -68,7 +68,7 @@ public class RegisterUI extends Group {
         // Sử dụng * thay cho kí tự mật khẩu được nhập
         passwordTextField.setPasswordCharacter('*');
         verifyPassTextField.setPasswordCharacter('*');
-        userIDTextField.setMessageText("5-12kí tự，bao gồm cả chữ và số");
+        userIDTextField.setMessageText("5-12 kí tự, bao gồm cả chữ và số");
         passwordTextField.setMessageText("Độ dài mật khẩu phải lớn hơn 5");
         verifyPassTextField.setMessageText("Độ dài mật khẩu phải lớn hơn 5");
 

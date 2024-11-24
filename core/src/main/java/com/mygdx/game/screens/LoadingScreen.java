@@ -42,7 +42,7 @@ public class LoadingScreen implements Screen {
         skin=new Skin(Gdx.files.internal("../assets/skin/skin.json"), new TextureAtlas(Gdx.files.internal("../assets/skin/skin.atlas")));
         stage = new Stage();
 
-        texture = new Texture(Gdx.files.internal( "../assets/image/other/leading.png" ));
+        texture = new Texture(Gdx.files.internal( "../assets/image/other/leading.png"));
         texture1=new Texture(Gdx.files.internal("../assets/image/background/setbackground.png"));
 
         img1 = new Image();
@@ -50,7 +50,7 @@ public class LoadingScreen implements Screen {
         img1.setSize(180,180);
         img1.setPosition(300,100);
 
-        window1 = new LeadingWindow("", skin, "dialog", "Chào mừng đến với Nông Trại PTIT, vui lòng\nhoàn thiện thông tin của bạn\n");
+        window1 = new LeadingWindow("", skin, "dialog", "Chào mừng đến với Nông Trại PTIT,\n vui lònghoàn thiện thông tin của bạn\n");
         settingWindow = new SettingWindow("Hoàn thiện thông tin", skin);
         settingWindow.setPosition(Gdx.graphics.getWidth()/2-225, Gdx.graphics.getHeight()/2-225);
         returnButton = new TextButton("Menu chính", skin);

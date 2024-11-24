@@ -13,6 +13,7 @@ public class SQLConnector {
     static final String PASS = "iAP5dSdx8u";
     private static Connection conn = null;
 
+    
     private static Statement stmt = null;
 
     static {//Nó được gọi khi lớp được khởi tạo để hoàn thành kết nối và sau đó không cần phải tạo kết nối thường xuyên.

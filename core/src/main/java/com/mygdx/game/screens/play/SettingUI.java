@@ -62,11 +62,7 @@ public class SettingUI extends Window {
         cancelButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                //撤销设置
             	thisSettingUI.setVisible(false);
-
-
-
             }
         });
 

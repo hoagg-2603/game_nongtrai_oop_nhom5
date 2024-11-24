@@ -172,7 +172,7 @@ public class LoginScreen implements Screen {
 										registerUI.getVerifyPassTextField().setText("");
 									}
 								}
-							}.text("Mật khẩu quá yếu, vui lòng nhập lại!！").button("Xác nhận", true).show(loginStage);
+							}.text("Mật khẩu quá yếu, vui lòng nhập lại!").button("Xác nhận", true).show(loginStage);
 						}
 						else{//Thông tin đăng ký hợp lệ, bắt đầu đăng ký
 							user=new User(registerUI.getUserIDTextField().getText(),
@@ -188,7 +188,7 @@ public class LoginScreen implements Screen {
 										loginUI.setVisible(true);
 									}
 								}
-							}.text("Chúc mừng, bạn đã đăng ký thành công, hãy đăng nhập ngay！").button("Xác nhận", true).show(loginStage);
+							}.text("Chúc mừng, bạn đã đăng ký thành công, hãy đăng nhập ngay!").button("Xác nhận", true).show(loginStage);
 						}
 					} catch (SQLException e) {
 						e.printStackTrace();
@@ -244,15 +244,11 @@ public class LoginScreen implements Screen {
 	}
 
 	public void render(float delta) {
-		// 黑色清屏
-
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		game.batch.begin();
 		game.batch.end();
-		// 更新舞台逻辑
 		loginStage.act();
-		// 绘制舞台
 		loginStage.draw();
 	}
 
@@ -277,10 +273,6 @@ public class LoginScreen implements Screen {
 	}
 
 	public void dispose() {
-		// 场景被销毁时释放资源
-
-
-
 	}
 
 	public Skin getSkin() {
