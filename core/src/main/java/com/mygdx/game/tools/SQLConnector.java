@@ -24,10 +24,10 @@ public class SQLConnector {
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
             // Thực hiện truy vấn
             stmt = conn.createStatement();
-            System.out.println("Kết nối cơ sở dữ liệu thành công！");
+            System.out.println("Kết nối cơ sở dữ liệu thành công!");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            System.out.println("Kết nối cơ sở dữ liệu không thành công, sử dụng bộ nhớ cục bộ！");
+            System.out.println("Kết nối cơ sở dữ liệu không thành công, sử dụng bộ nhớ cục bộ!");
         } catch (SQLException e) {
             e.printStackTrace();
         }

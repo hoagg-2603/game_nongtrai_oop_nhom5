@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.3.1" name="land" tilewidth="32" tileheight="32" tilecount="12" columns="6">
- <image source="assets/land.png" width="197" height="84"/>
+<tileset version="1.10" tiledversion="1.11.0" name="land" tilewidth="32" tileheight="32" tilecount="9" columns="3">
+ <image source="../image/Sheets/Paths.png" width="96" height="96"/>
 </tileset>
