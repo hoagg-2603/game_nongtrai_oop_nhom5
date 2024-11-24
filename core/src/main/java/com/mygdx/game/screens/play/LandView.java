@@ -88,7 +88,11 @@ public class LandView extends Actor{
         }
         else if(!playScreen.getUser().isActable(3))
         {
+<<<<<<< Updated upstream
             new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!！").button("Xác nhận", true).show(playScreen.getStage());
+=======
+            new Dialog("",playScreen.getSkin(),"dialog").text("Nhân vật đang mệt đó bro!").button("Xác nhận", true).show(playScreen.getStage());
+>>>>>>> Stashed changes
 
         }
         else if(land.isPickable()) {
@@ -97,7 +101,7 @@ public class LandView extends Actor{
             playScreen.getUser().setExp(playScreen.getUser().getExp()+5);
             playScreen.getUser().setHp(playScreen.getUser().getHp()-3);
             playScreen.getFruitArray().get(land.getCropID()).setFruitNumber(land.getFruitNum()+land.getFruitNum());
-            new Dialog("",playScreen.getSkin(),"dialog").text("hu hoạch thành công, thu được"+land.getFruitNum()+"个"+playScreen.getFruitArray().get(land.getCropID()).getName()+"!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Thu hoạch thành công, thu được"+land.getFruitNum()+"个"+playScreen.getFruitArray().get(land.getCropID()).getName()+"!").button("Xác nhận", true).show(playScreen.getStage());
             land.setFruitNum(0);
             cropTexture=new Texture(crop.getCropEndPic());
             land.setPerished(true);
@@ -107,20 +111,24 @@ public class LandView extends Actor{
 
         }
         else if(land.isPerished())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chết!！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Cây chết mất rùi =))").button("Xác nhận", true).show(playScreen.getStage());
         else
-            new Dialog("",playScreen.getSkin(),"dialog").text("Trái cây chưa chín! Hãy kiên nhẫn chờ đợi").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Trái cây chưa chín đâu, đợi nhé bro!").button("Xác nhận", true).show(playScreen.getStage());
 
     }
 
-    public void shovel(){//铲除函数
+    public void shovel(){ //Hàm xới đất
         if(land.getCropID()==-1)
         {
+<<<<<<< Updated upstream
             new Dialog("",playScreen.getSkin(),"dialog").text("Không cần xới đất！").button("Xác nhận", true).show(playScreen.getStage());
+=======
+            new Dialog("",playScreen.getSkin(),"dialog").text("Không cần xới đất đâu.").button("Xác nhận", true).show(playScreen.getStage());
+>>>>>>> Stashed changes
         }
         else if(!playScreen.getUser().isActable(4))
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Nhân vật đang mệt đó bro!").button("Xác nhận", true).show(playScreen.getStage());
 
         }
 
@@ -150,7 +158,7 @@ public class LandView extends Actor{
                     }
 
                 }
-            }.text("Cây trồng đã chín, xác nhận xới đất không?").button("Xác nhận", true).button("Hủy",false).show(playScreen.getStage());
+            }.text("Cây chín rùi, giờ bro có muốn xới đất hay không?").button("Xác nhận", true).button("Hủy",false).show(playScreen.getStage());
 
         }
         else{
@@ -164,7 +172,7 @@ public class LandView extends Actor{
                     }
 
                 }
-            }.text("Cây trồng đang phát triển, xác nhận xới đất không?").button("Xác nhận", true).button("Hủy",false).show(playScreen.getStage());
+            }.text("Cây trồng đang phát triển đó, bro muốn xới đất thật hả?").button("Xác nhận", true).button("Hủy",false).show(playScreen.getStage());
 
         }
 
@@ -176,14 +184,14 @@ public class LandView extends Actor{
             new Dialog("",playScreen.getSkin(),"dialog").text("Đất không có cây trồng thì không cần tưới nước đâu!").button("Xác nhận", true).show(playScreen.getStage());
 
         else if(land.isWatered())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Mảnh đất này đã được tưới nước！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Mảnh đất này đã được tưới nước!").button("Xác nhận", true).show(playScreen.getStage());
         else if(land.isPerished())
             new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chết, không cần tưới nước nữa!").button("Xác nhận", true).show(playScreen.getStage());
         else if(land.isPickable())
             new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chín, không cần tưới nước nữa!").button("Xác nhận", true).show(playScreen.getStage());
         else if(!playScreen.getUser().isActable(1))
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Nhân vật đang mệt đó bro!").button("Xác nhận", true).show(playScreen.getStage());
 
         }
         else {
@@ -212,7 +220,7 @@ public class LandView extends Actor{
         }
         else if(playScreen.getPropArray().get(3).getPropNumber()==0)
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Kho phân bón không đủ！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Hết phân bón rồi nhá bro!").button("Xác nhận", true).show(playScreen.getStage());
 
         }
         else {

@@ -52,7 +52,7 @@ public class LoginUI extends Group {
         passwordTextField.setPasswordMode(true);
         passwordTextField.setPasswordCharacter('*');
 
-        remember=new CheckBox("Ghi nhớ mật khẩu",skin);
+        remember=new CheckBox("Ghi nhớ mật khẩu?",skin);
 
         if(Check.checkLocalUserExist())
         {
