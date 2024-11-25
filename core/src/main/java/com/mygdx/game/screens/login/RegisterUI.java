@@ -40,10 +40,10 @@ public class RegisterUI extends Group {
     public RegisterUI(Skin skin) {
 
         //Khởi tạolabel
-        userIDLabel = new Label("Tài khoản:", skin);
-        passwordLabel = new Label("Mật khẩu:", skin);
-        passpow=new Label("Độ mạnh mật khẩu:",skin);
-        verifyPassLabel = new Label("Xác nhận mật khẩu:", skin);
+        userIDLabel = new Label("Tài khoản:", skin, "white");
+        passwordLabel = new Label("Mật khẩu:", skin, "white");
+        passpow=new Label("Độ mạnh mật khẩu:",skin, "white");
+        verifyPassLabel = new Label("Xác nhận mật khẩu:", skin, "white");
 
 
         //Có 4 trường thông tin：Số tk+Tên người dùng+Mật khẩu+Xác nhận mật khẩu
@@ -83,16 +83,16 @@ public class RegisterUI extends Group {
         buttonTable.add(cancelButton).padLeft(100).padRight(80);
         buttonTable.setPosition(50, -350);
 
-        userIDLabel.setPosition(-100,100);
+        userIDLabel.setPosition(-230,115);
         userIDTextField.setPosition(-100,100);
-        passwordLabel.setPosition(-250,0);
+        passwordLabel.setPosition(-230,10);
         passwordTextField.setPosition(-100,0);
-        passpow.setPosition(-250,-100);
+        passpow.setPosition(-300,-95);
         pass1.setPosition(-100,-100);
         pass2.setPosition(-100,-100);
         pass3.setPosition(-100,-100);
         pass4.setPosition(-100,-100);
-        verifyPassLabel.setPosition(-250,-200);
+        verifyPassLabel.setPosition(-300,-190);
         verifyPassTextField.setPosition(-100,-200);
         pass2.setVisible(false);
         pass3.setVisible(false);

@@ -640,7 +640,7 @@ public class PlayScreen implements Screen {
                         }
                     }.text("Mật khẩu quá yếu, vui lòng nhập lại！").button("Xác nhận", true).show(stage);
                 }
-                else {//读入数据库
+                else {
 
                     new Dialog("", skin, "dialog") {
                         protected void result(Object object) {

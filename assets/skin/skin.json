@@ -1,7 +1,7 @@
 {
   "com.badlogic.gdx.graphics.g2d.BitmapFont": {
     "textfont": {
-      "file": "vietnamese1.fnt"
+      "file": "vietnamese3.fnt"
     },
     "titlefont": {
       "file": "vietnamese1.fnt"
@@ -160,7 +160,7 @@
       "cursor": "curse",
       "selection": "selection",
       "messageFont": "textfont"
-    }
+    }    
   },
 
   "com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {

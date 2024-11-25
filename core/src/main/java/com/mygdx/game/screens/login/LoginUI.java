@@ -17,6 +17,7 @@ public class LoginUI extends Group {
     private Table loginTable;
     private Table buttonTable;
     private JFrame jframe;
+    
     public TextField getUserIDTextField() {
         return userIDTextField;
     }
@@ -38,13 +39,13 @@ public class LoginUI extends Group {
 
     public LoginUI(Skin skin){
         this.skin=skin;
-        userIDLabel=new Label("Tài khoản:", skin);
+        userIDLabel=new Label("Tài khoản:", skin, "white");
         userIDLabel.setAlignment(Align.left);
-        passwordLabel=new Label("Mật khẩu:",skin);
+        passwordLabel=new Label("Mật khẩu:",skin, "white");
         passwordLabel.setAlignment(Align.left);
-//        jframe.setSize(400,400);
-//        jframe.setVisible(true);
-//        jframe.setLayout(null);
+    //    jframe.setSize(400,400);
+    //    jframe.setVisible(true);
+    //    jframe.setLayout(null);
         userIDTextField=new TextField("",skin);
         userIDTextField.setAlignment(Align.center);
 
@@ -66,9 +67,6 @@ public class LoginUI extends Group {
 
         loginButton=new TextButton("Đăng nhập", skin);
         registerButton=new TextButton("Đăng ký", skin);
-
-
-
 
         loginTable=new Table();
         buttonTable=new Table();
