@@ -62,8 +62,8 @@ public class PlayScreen implements Screen {
     private PlayerController controller;
 
     //Biến sân khấu
-    private Stage stage;//主舞台
-    private Stage landStage;//土地舞台
+    private Stage stage;
+    private Stage landStage;
 
     //Giao diện UI
     private StatusUI statusUI;
