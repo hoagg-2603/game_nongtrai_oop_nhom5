@@ -43,7 +43,7 @@ public class LoadingScreen implements Screen {
         stage = new Stage();
 
         texture = new Texture(Gdx.files.internal( "../assets/image/other/leading.png"));
-        texture1=new Texture(Gdx.files.internal("../assets/image/background/setbackground.png"));
+        texture1= new Texture(Gdx.files.internal("../assets/image/background/setbackground.png"));
 
         img1 = new Image();
         img1.setDrawable(new TextureRegionDrawable(new TextureRegion(texture)));
