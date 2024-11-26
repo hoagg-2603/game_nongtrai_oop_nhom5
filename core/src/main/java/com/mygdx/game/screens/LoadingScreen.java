@@ -50,7 +50,7 @@ public class LoadingScreen implements Screen {
         img1.setSize(180,180);
         img1.setPosition(300,100);
 
-        window1 = new LeadingWindow("", skin, "dialog", "Chào mừng đến với Nông Trại PTIT,\n vui lònghoàn thiện thông tin của bạn\n");
+        window1 = new LeadingWindow("", skin, "dialog", "Chào mừng đến với HappyFarm by Nhóm 5 OOP Thầy Sơn,\n vui lòng điền thông tin của bạn zô đây.\n");
         settingWindow = new SettingWindow("Hoàn thiện thông tin", skin);
         settingWindow.setPosition(Gdx.graphics.getWidth()/2-225, Gdx.graphics.getHeight()/2-225);
         returnButton = new TextButton("Menu chính", skin);
@@ -82,7 +82,7 @@ public class LoadingScreen implements Screen {
                             if (object.equals(true)) {
                             }
                         }
-                    }.text("Vui lòng nhập tên và chọn ảnh đại diện").button("Xác nhận", true).show(stage);
+                    }.text("Nhập tên và chọn ảnh đại diện đi bạn =))").button("Xác nhận", true).show(stage);
                 }
                 else {
                     user.setUserName(settingWindow.getTextField().getText());

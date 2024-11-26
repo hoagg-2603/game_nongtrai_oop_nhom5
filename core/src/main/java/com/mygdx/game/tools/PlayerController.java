@@ -125,7 +125,7 @@ public abstract class PlayerController implements InputProcessor {
 											}
 
 										}
-									}.text("Có nên ngủ ngay không？").button("Có", true).button("Không",false).show(screen.getStage());
+									}.text("Có nên ngủ ngay không?").button("Có", true).button("Không",false).show(screen.getStage());
 								}
 								break;
 							}

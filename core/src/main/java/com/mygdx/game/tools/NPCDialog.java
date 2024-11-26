@@ -116,7 +116,7 @@ public class NPCDialog {
 						}
 					}
 				};
-				dialogOfSecurityGuard1.text("Bạn ơi, vui lòng xuất trình thẻ sinh viên！");
+				dialogOfSecurityGuard1.text("Bạn ơi, vui lòng xuất trình thẻ sinh viên!");
 				dialogOfSecurityGuard1.button("Tiếp tục đối thoại", true);
 			}
 

@@ -79,7 +79,7 @@ public class LoginScreen implements Screen {
 								loginUI.getPasswordTextField().setText("");
 							}
 						}
-					}.text("Tài khoản không tồn tại, vui lòng đăng ký trước!").button("Xác nhận", true).show(loginStage);
+					}.text("Tài khoản không tồn tại, đăng kí đã rồi chơi, hong cần vội =))").button("Xác nhận", true).show(loginStage);
 				}
 
                 else if(status==1)
@@ -90,7 +90,7 @@ public class LoginScreen implements Screen {
 							loginUI.getPasswordTextField().setText("");
 						}
 					}
-				}.text("Sai mật khẩu, vui lòng nhập lại!").button("Xác nhận", true).show(loginStage);
+				}.text("Nhớ lại xem mật khẩu đúng là gì nhá =))").button("Xác nhận", true).show(loginStage);
 				}
 
                 else {
@@ -148,7 +148,7 @@ public class LoginScreen implements Screen {
 									if (object.equals(true)) {
 									}
 								}
-							}.text("Tài khoản đã tồn tại, vui lòng nhập lại!").button("Xác nhận", true).show(loginStage);
+							}.text("Username đã tồn tại, nghĩ tên khác đi nhe!").button("Xác nhận", true).show(loginStage);
 						}
 
 						else if (!Check.checkVerifyPass(registerUI.getPasswordTextField().getText(),
@@ -161,7 +161,7 @@ public class LoginScreen implements Screen {
 										registerUI.getVerifyPassTextField().setText("");
 									}
 								}
-							}.text("Mật khẩu không khớp, vui lòng nhập lại！").button("Xác nhận", true).show(loginStage);
+							}.text("Có mỗi việc nhập lại mật khẩu còn sai\n      thì làm nên cơm cháo gì =))").button("Xác nhận", true).show(loginStage);
 						}
 						else if(!Check.checkPassworst(registerUI.getPasswordTextField().getText()))
 						{
@@ -172,7 +172,7 @@ public class LoginScreen implements Screen {
 										registerUI.getVerifyPassTextField().setText("");
 									}
 								}
-							}.text("Mật khẩu quá yếu, vui lòng nhập lại!").button("Xác nhận", true).show(loginStage);
+							}.text("Mật khẩu quá yếu, nhập cái khác đi!").button("Xác nhận", true).show(loginStage);
 						}
 						else{//Thông tin đăng ký hợp lệ, bắt đầu đăng ký
 							user=new User(registerUI.getUserIDTextField().getText(),

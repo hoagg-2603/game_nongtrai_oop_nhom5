@@ -273,7 +273,7 @@ public class PlayScreen implements Screen {
                 int hpLost=MathUtils.random(0, (int)(user.getHp()*0.8));
                 user.setMoney(user.getMoney()-lost);
                 user.setHp(user.getHp()-hpLost);
-                new Dialog("",skin,"dialog").text("Rất tiếc, bạn đã ngã và mất"+lost+"xu và "+hpLost+"sức khỏe").button("Xác nhận", true).show(stage);
+                new Dialog("",skin,"dialog").text("Rất tiếc, bạn đã xỉu ngang và mất "+lost+" xu và "+hpLost+" sức khỏe").button("Xác nhận", true).show(stage);
                 user.setSleep(false);
                 user.setFaint(false);
                 worldTime.setRealToTimerRatio(300);
@@ -286,7 +286,7 @@ public class PlayScreen implements Screen {
                 user.setHp(100);
                 player.setCurrentPosition(700, 600);
                 worldTime.setRealToTimerRatio(300);
-                new Dialog("",skin,"dialog").text("Sau một đêm nghỉ ngơi, sức khỏe của bạn đã hồi phục！").button("Xác nhận", true).show(stage);
+                new Dialog("",skin,"dialog").text("Sau một đêm nghỉ ngơi, sức khỏe của bạn đã hồi phục!").button("Xác nhận", true).show(stage);
 
             }
             showSleep=false;
@@ -311,7 +311,7 @@ public class PlayScreen implements Screen {
                     }
 
                 }
-            }.text("Đã khuya. Bạn có muốn về nhà nghỉ ngơi không？").button("Đi ngủ thôi！", true).button("Không! Tôi vẫn còn sức！",false).show(stage);
+            }.text("Khuya rùi đi ngủ nha?").button("Đi ngủ thôi!", true).button("Thích thức có sao hong?",false).show(stage);
 
         }
 
@@ -329,7 +329,7 @@ public class PlayScreen implements Screen {
                     }
 
                 }
-            }.text("Do làm việc quá sức, bạn đã ngã quỵ！").button("Xác nhận", true).show(stage);
+            }.text("Do làm việc quá sức, bạn đã xỉu ngang =)))").button("Xác nhận", true).show(stage);
             user.setFaint(true);
             user.setSleep(true);
             player.faint();
@@ -556,7 +556,7 @@ public class PlayScreen implements Screen {
                 exitwindow.setVisible(false);
             }
         });
-        exitwindow.Getyes().addListener(new ClickListener() {//切换账号
+        exitwindow.Getyes().addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {//Chuyển tài khoản
                 dispose();
 
@@ -604,7 +604,7 @@ public class PlayScreen implements Screen {
             }
         });
 
-        changewindow.Getyes().addListener(new ClickListener() {//切换账号
+        changewindow.Getyes().addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
                 if (Check.checkusername(changewindow.Getusernamefield().getText()))
                     new Dialog("", skin, "dialog") {
@@ -627,7 +627,7 @@ public class PlayScreen implements Screen {
                             }
 
                         }
-                    }.text("Mật khẩu không khớp, vui lòng nhập lại！").button("Xác nhận", true).show(stage);
+                    }.text("Nhập lại cái mật khẩu cũng không khớp thì còn làm ăn gì nữa!").button("Xác nhận", true).show(stage);
                 }
                 else if(!Check.checkPassworst(changewindow.Getpasswordfield().getText()))
                 {
@@ -638,7 +638,7 @@ public class PlayScreen implements Screen {
                                 changewindow.Getverifypassfield().setText("");
                             }
                         }
-                    }.text("Mật khẩu quá yếu, vui lòng nhập lại！").button("Xác nhận", true).show(stage);
+                    }.text("Mật khẩu quá yếu, vui lòng nhập lại!").button("Xác nhận", true).show(stage);
                 }
                 else {
 
@@ -654,13 +654,13 @@ public class PlayScreen implements Screen {
                                 changewindow.initial();
                             }
                         }
-                    }.text("Thông tin đã được thay đổi thành công！").button("Xác nhận", true).show(stage);
+                    }.text("Thông tin đã được thay đổi thành công!").button("Xác nhận", true).show(stage);
                     changewindow.setVisible(false);
                 }
             }
         });
 
-        changewindow.Getno().addListener(new ClickListener() {//切换账号
+        changewindow.Getno().addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
                 changewindow.setVisible(false);
                 userwindow.setVisible(true);
@@ -692,7 +692,7 @@ public class PlayScreen implements Screen {
                                 System.exit(-1);
                             }
                         }
-                    }.text("Bạn có chắc muốn thoát?").button("Có", true).button("Không", false).show(stage);
+                    }.text("Bạn muốn rời đi thiệc à?").button("Ừ!", true).button("Thôi mà, đùa", false).show(stage);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
