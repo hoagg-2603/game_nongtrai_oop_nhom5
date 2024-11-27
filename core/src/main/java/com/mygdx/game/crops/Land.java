@@ -1,22 +1,22 @@
 package com.mygdx.game.crops;
 
 public class Land {
-    private int landID;// id
-    private int cropID = -1;// số lượng cây trồng trên đất(-1 nghĩa là không trồng cây gì)
-    private double growTime;// thời gian tăng trưởng，sẽ thay đổi  khi tưới nước
-    private double startTime;//thời điểm bắt đầu gieo hạt
-    private double waterTime;//Thời gian tưới
-    private int nowStage=0;// Giai đoạn tăng trưởng hiện tại
-    private boolean isPerished;// trạng thái
-    private boolean isBugged;// Có lỗi
-    private boolean isWeeded;//Có đang phát triển không
-    private boolean isWatered;//Có được tưới nước không
-    private int noWaterCount;// Số lần được tưới nước liên tiếp
-    private int fruitNum;// Số quả
-    private boolean isFertilized;//Việc bón phân
+    private int landID; // id đất trồng
+    private int cropID = -1; // số lượng cây trồng trên đất(-1 nghĩa là không trồng cây gì)
+    private double growTime; // thời gian tăng trưởng，sẽ thay đổi  khi tưới nước
+    private double startTime; //thời điểm bắt đầu gieo hạt
+    private double waterTime; //Thời gian tưới
+    private int nowStage=0; // Giai đoạn tăng trưởng hiện tại
+    private boolean isPerished; // trạng thái
+    private boolean isBugged; // Có lỗi
+    private boolean isWeeded; //Có đang phát triển không
+    private boolean isWatered; //Có được tưới nước không
+    private int noWaterCount; // Số lần được tưới nước liên tiếp
+    private int fruitNum; // Số quả trên cây
+    private boolean isFertilized; //Việc bón phân
 
-    private boolean pickable=false;
-    private boolean seedable=true;
+    private boolean pickable=false; //Có thể hái được không
+    private boolean seedable=true; //Có thể gieo hạt được không
 
 
     public Land() {

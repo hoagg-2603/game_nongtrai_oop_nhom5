@@ -11,6 +11,7 @@ public class Lwjgl3Launcher {
     public static void main(String[] args) {
         Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
         config.setTitle("FarmGame"); // Đặt tiêu đề cửa sổ
+        config.setWindowIcon("../assets/image/icon/1.png");// Đặt biểu tượng cửa sổ
         config.setWindowedMode(1480, 950); // Thiết lập kích thước cửa sổ
         config.setResizable(false); // Không cho phép thay đổi kích thước cửa sổ
 

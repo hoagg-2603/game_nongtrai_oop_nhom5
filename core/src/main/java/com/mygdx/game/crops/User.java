@@ -6,18 +6,18 @@ public class User {
     //Sản phẩm thông tin người chơi
 
     private String userID;// id
-    private String userName;// tên
-    private String pass;// mật khẩu
+    private String userName;// tên người chơi
+    private String pass;// mật khẩu người chơi
     private String pic;// ảnh đại diện
-    private double money;// tiền
+    private double money;// số tiền người chơi đang có 
     private int exp;// kinh nghiệm
     private int maxExp;//kinh nghiệm để tăng cấp
-    private int level;// đẳng cấp
+    private int level;// cấp độ của người chơi
     private int hp;//máu
-    private boolean faint;//trạng thái,thức/ngủ
+    private boolean faint;//có ngất xỉu hay không?
     private boolean sleep;//state，thức/ngủ
-    private float positionX;
-    private float positionY;
+    private float positionX; //vị trí người chơi theo Ox
+    private float positionY; // vị trí người chơi theo Oy
 
     public User() {
         super();

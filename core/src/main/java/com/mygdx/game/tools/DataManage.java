@@ -99,7 +99,6 @@ public class DataManage {
 
     }
 
-    //存储种子数据到数据库
     public static void saveCropDataToSQL(Array<Crop> cropArray, String userID) throws SQLException {
         if(SQLConnector.getConn()!=null)
         {
@@ -232,7 +231,6 @@ public class DataManage {
     //Khởi tạo thông tin tài khoản sau khi đăng ký tài khoản
     public static void initialUser(String userID) {
         Json json = new Json();
-
         Timer timer = new Timer();
 
         //Dữ liệu cần được khởi tạo
@@ -311,7 +309,7 @@ public class DataManage {
         propArray.add(prop2);
         propArray.add(prop3);
 
-        //初始化土地
+        //danh sách land
         Land land0 = new Land(0);
         Land land1 = new Land(1);
         Land land2 = new Land(2);
@@ -342,7 +340,7 @@ public class DataManage {
 
         if(SQLConnector.getConn()!=null)
         {
-            //将数据存储到json字符串并且写入到数据库
+            //Lưu trữ dữ liệu vào chuỗi json và ghi vào cơ sở dữ liệu
             String timerData = json.toJson(timer);
             String cropData = json.toJson(cropArray);
             String fruitData = json.toJson(fruitArray);

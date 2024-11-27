@@ -1,14 +1,14 @@
 package com.mygdx.game.crops;
 
 public class Crop {
-	private int cropId;
-	private String name;
-	private String pic;
-	private int stageCount;
-	private int unitTime;
-	private double seedPrice;
-	private int buyLevel;
-	private int cropNumber;
+	private int cropId; //id hạt giống
+	private String name; //tên hạt giống
+	private String pic; //ảnh hạt giống
+	private int stageCount; //số lượng giai đoạn phát triển của hạt giống
+	private int unitTime; //thời gian mỗi giai đoạn
+	private double seedPrice; // giá mỗi hạt giống
+	private int buyLevel; //mức cấp độ mua
+	private int cropNumber; //số lượng hạt giống 
 
 
 	public Crop(int cropId, String name, String pic, int stageCount,

@@ -62,7 +62,7 @@ public class RegisterUI extends Group {
         pass3=new Image(new Texture(Gdx.files.internal( "../assets/image/other/pass3.png")));
         pass4=new Image(new Texture(Gdx.files.internal( "../assets/image/other/pass4.png")));
 
-        // Textbox dùng để hiển thị mật khẩu, textbõ cần được đặt ở chế độ mật khẩu
+        // Textbox dùng để hiển thị mật khẩu, textbox cần được đặt ở chế độ mật khẩu
         passwordTextField.setPasswordMode(true);
         verifyPassTextField.setPasswordMode(true);
         // Sử dụng * thay cho kí tự mật khẩu được nhập
@@ -74,7 +74,7 @@ public class RegisterUI extends Group {
 
         registerButton = new TextButton("Đăng ký", skin);
         registerButton.setTransform(true);
-        cancelButton = new TextButton("Hủy bỏ", skin);
+        cancelButton = new TextButton("Hủy", skin);
         cancelButton.setTransform(true);
 
         buttonTable = new Table();

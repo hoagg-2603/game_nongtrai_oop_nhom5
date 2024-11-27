@@ -2,62 +2,59 @@ package com.mygdx.game.crops;
 
 public class Fruit {
 	//Lớp trái câu lưu trữ thông tin về trái cây
-	private int fruitId;//id
-	private String name;//tên cây trồng
-	private String pic;//ảnh cây trồng
-	private double fruitPrice;//Giá bán
-	private int fruitNumber;// số lượng
+	private int fruitId; //id cây trồng
+	private String name; //tên cây trồng
+	private String pic; //ảnh cây trồng
+	private double fruitPrice; //Giá bán của cây trồng
+	private int fruitNumber; // số lượng cây trồng
 
 	public Fruit() {
-			super();
-		}
+		super();
+	}
 
-		public Fruit(int fruitId, String name,String pic,double fruitPrice,int fruitNumber) {
+	public Fruit(int fruitId, String name,String pic,double fruitPrice,int fruitNumber) {
 
-			this.fruitId = fruitId;
-			this.name = name;
-			this.pic=pic;
-			this.fruitPrice=fruitPrice;
-			this.fruitNumber=fruitNumber;
-		}
+		this.fruitId = fruitId;
+		this.name = name;
+		this.pic=pic;
+		this.fruitPrice=fruitPrice;
+		this.fruitNumber=fruitNumber;
+	}
 
+	public int getFruitId() {
+		return fruitId;
+	}
 
+	public void setFruitId(int fruitId) {
+		this.fruitId = fruitId;
+	}
 
-		public int getFruitId() {
-			return fruitId;
-		}
+	public String getName() {
+		return name;
+	}
 
-		public void setFruitId(int fruitId) {
-			this.fruitId = fruitId;
-		}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPic() {
+		return pic;
+	}
 
-		public String getName() {
-			return name;
-		}
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
+	public double getFruitPrice() {
+		return fruitPrice;
+	}
 
-		public void setName(String name) {
-			this.name = name;
-		}
-		public String getPic() {
-			return pic;
-		}
+	public void setFruitPrice(double fruitPrice) {
+		this.fruitPrice = fruitPrice;
+	}
+	public int getFruitNumber() {
+		return fruitNumber;
+	}
 
-		public void setPic(String pic) {
-			this.pic = pic;
-		}
-		public double getFruitPrice() {
-			return fruitPrice;
-		}
-
-		public void setFruitPrice(double fruitPrice) {
-			this.fruitPrice = fruitPrice;
-		}
-		public int getFruitNumber() {
-			return fruitNumber;
-		}
-
-		public void setFruitNumber(int fruitNumber) {
-			this.fruitNumber = fruitNumber;
-		}
-
+	public void setFruitNumber(int fruitNumber) {
+		this.fruitNumber = fruitNumber;
+	}
 }

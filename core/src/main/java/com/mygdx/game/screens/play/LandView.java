@@ -17,15 +17,14 @@ import com.mygdx.game.screens.PlayScreen;
 
 public class LandView extends Actor{
     //Lớp để hiển thị trực quan đất
+    private Land land; //Dữ liệu đất
+    private PlayScreen playScreen; 
+    private Crop crop; //Dữ liệu cây trồng trên đất
+    private Texture landTexture; // Ảnh nền đất
+    private Texture cropTexture; // Ảnh cây trồng, thay đổi tùy theo tình trạng trồng trên đất
+    private double noWateredTime=0; // Thời gian không tưới nước
 
-    private Land land;//Dữ liệu đất
-    private PlayScreen playScreen;
-    private Crop crop;//Dữ liệu cây trồng trên đất
-    private Texture landTexture;// Ảnh nền đất
-    private Texture cropTexture;//Ảnh cây trồng, thay đổi tùy theo tình trạng trồng trên đất
-    private double noWateredTime=0;
-
-    public LandView(PlayScreen playScreen,Land land,float x,float y) {
+    public LandView(PlayScreen playScreen,Land land,float x,float y) { //Khởi tạo lớp đất nền trồng cây
         super();
         this.land=land;
         this.playScreen=playScreen;
@@ -35,9 +34,7 @@ public class LandView extends Actor{
         loadLandData();//Tải dữ liệu hiện tại của đất
         this.addListener(new ClickListener(){public void clicked(InputEvent event, float x, float y)
         {
-
                 if(playScreen.getMouseStatus()==-100){
-
                 }
                 else if(playScreen.getMouseStatus()==-1)
                     shovel();
@@ -58,7 +55,7 @@ public class LandView extends Actor{
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
         if(landTexture!=null){//Vẽ ảnh nền
-            if(land.isWatered())//Nếu đã tưới nước, thay đổi màu bút vẽ thành xám đậm để hiện hiệu ứng tưới nước
+            if(land.isWatered())// Nếu đã tưới nước, thay đổi màu bút vẽ thành xám đậm để hiện hiệu ứng tưới nước
                 batch.setColor(Color.GRAY);
             batch.draw(landTexture, getX(), getY());
             batch.setColor(Color.WHITE);
@@ -69,7 +66,7 @@ public class LandView extends Actor{
 }
 
     @Override
-    public void act(float delta) {
+    public void act(float delta) { // Hàm thực hiện hành động của đất
         super.act(delta);
         if(land.getCropID()!=-1){
             if(playScreen.getWorldTime().getTotalPassedSecond()-land.getWaterTime()>86400) {
@@ -77,27 +74,24 @@ public class LandView extends Actor{
             }
         }
         if(land.getCropID()!=-1&&!land.isPickable()&&!land.isPerished())//Có trồng, không héo úa, chưa trưởng thành mới có thể phát triển
-
             grow();
     }
 
     public void pick(){//Hàm thu hoạch
-        if(land.getCropID()==-1)
-        {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không có cây trồng trên mảnh đất này!").button("Xác nhận", true).show(playScreen.getStage());
+        if(land.getCropID()==-1){
+            new Dialog("",playScreen.getSkin(),"dialog").text("Có trồng gì đâu mà đòi thu hoạch =))").button("Xác nhận", true).show(playScreen.getStage());
         }
-        else if(!playScreen.getUser().isActable(3))
-        {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
+        else if(!playScreen.getUser().isActable(3)){
+            new Dialog("",playScreen.getSkin(),"dialog").text("Đang mệt nha không đủ sức thu hoạch đâu.").button("Xác nhận", true).show(playScreen.getStage());
 
         }
-        else if(land.isPickable()) {
+        else if(land.isPickable()) { // Nếu cây có thể thu hoạch
 
             playScreen.game.gamemusic.setharvestSoundPlaying();
             playScreen.getUser().setExp(playScreen.getUser().getExp()+5);
             playScreen.getUser().setHp(playScreen.getUser().getHp()-3);
             playScreen.getFruitArray().get(land.getCropID()).setFruitNumber(land.getFruitNum()+land.getFruitNum());
-            new Dialog("",playScreen.getSkin(),"dialog").text("hu hoạch thành công, thu được"+land.getFruitNum()+"个"+playScreen.getFruitArray().get(land.getCropID()).getName()+"!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Thu hoạch thành công, thu được "+land.getFruitNum()+" quả "+playScreen.getFruitArray().get(land.getCropID()).getName()+"!").button("Xác nhận", true).show(playScreen.getStage());
             land.setFruitNum(0);
             cropTexture=new Texture(crop.getCropEndPic());
             land.setPerished(true);
@@ -106,21 +100,21 @@ public class LandView extends Actor{
             playScreen.getBag().update();
 
         }
-        else if(land.isPerished())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chết!！").button("Xác nhận", true).show(playScreen.getStage());
+        else if(land.isPerished()) // Nếu cây đã chết
+            new Dialog("",playScreen.getSkin(),"dialog").text("Cây chết mất rùi huhu T-T ").button("Xác nhận", true).show(playScreen.getStage());
         else
-            new Dialog("",playScreen.getSkin(),"dialog").text("Trái cây chưa chín! Hãy kiên nhẫn chờ đợi").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Chưa chín đâu. Gì mà vội z?").button("Xác nhận", true).show(playScreen.getStage());
 
     }
 
-    public void shovel(){//铲除函数
+    public void shovel(){// Hàm xới đất
         if(land.getCropID()==-1)
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không cần xới đất!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Không cần xới đất đâu!").button("Xác nhận", true).show(playScreen.getStage());
         }
         else if(!playScreen.getUser().isActable(4))
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Đang mệt nha không đủ sức xới đất lên đâu!").button("Xác nhận", true).show(playScreen.getStage());
 
         }
 
@@ -135,7 +129,7 @@ public class LandView extends Actor{
                 int luckyNumber=MathUtils.random(1, 5);
                 playScreen.getCropArray().get(luckyCrop.getCropId()).setCropNumber(luckyCrop.getCropNumber()+luckyNumber);
                 playScreen.getBag().update();
-                new Dialog("",playScreen.getSkin(),"dialog").text("Chúc mừng! Trong khi xới đất, bạn đã tìm thấy "+luckyCrop.getName()+"x"+luckyNumber).button("Xác nhận", true).show(playScreen.getStage());
+                new Dialog("",playScreen.getSkin(),"dialog").text("Uầy uầy! Trong khi xới đất may mắn tìm thấy "+luckyCrop.getName()+" x "+luckyNumber).button("Xác nhận", true).show(playScreen.getStage());
             }
             resetLand();
             cropTexture=null;
@@ -173,17 +167,17 @@ public class LandView extends Actor{
 
     public void water(){//Hàm tưới nước
         if(land.getCropID()==-1)
-            new Dialog("",playScreen.getSkin(),"dialog").text("Đất không có cây trồng thì không cần tưới nước đâu!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Có trồng gì đâu mà tưới, tưới ma à?").button("Xác nhận", true).show(playScreen.getStage());
 
         else if(land.isWatered())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Mảnh đất này đã được tưới nước！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Mảnh đất này đã được tưới nước.").button("Xác nhận", true).show(playScreen.getStage());
         else if(land.isPerished())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chết, không cần tưới nước nữa!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Lúc sống thì không tưới, cây chết rồi tưới gì?").button("Xác nhận", true).show(playScreen.getStage());
         else if(land.isPickable())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chín, không cần tưới nước nữa!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Thu hoạch đi chứ ở đấy mà tưới nước.").button("Xác nhận", true).show(playScreen.getStage());
         else if(!playScreen.getUser().isActable(1))
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Đang mệt lắm không có sức tưới nước đâu.").button("Xác nhận", true).show(playScreen.getStage());
 
         }
         else {
@@ -197,22 +191,22 @@ public class LandView extends Actor{
 
     public void fertilize(){// Hàm bón phân
         if(land.getCropID()==-1)
-            new Dialog("",playScreen.getSkin(),"dialog").text("Đất không có cây trồng thì không cần bón phân đâu!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Có trồng cây gì đâu mà bón phân =))").button("Xác nhận", true).show(playScreen.getStage());
 
         else if(land.isFertilized())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chết, không cần bón phân nữa!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Lúc cây sống thì không bón, chết rồi bón gì nữa?").button("Xác nhận", true).show(playScreen.getStage());
         else if(land.isPerished())
-            new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã chín, không cần bón phân nữa!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Cây chín rồi thu hoạch đi chứ ở đó mà bón.").button("Xác nhận", true).show(playScreen.getStage());
         else if(land.isPickable())
             new Dialog("",playScreen.getSkin(),"dialog").text("Cây trồng đã được bón phân!").button("Xác nhận", true).show(playScreen.getStage());
         else if(!playScreen.getUser().isActable(2))
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Đang mệt lắm không có sức bón phân đâu").button("Xác nhận", true).show(playScreen.getStage());
 
         }
         else if(playScreen.getPropArray().get(3).getPropNumber()==0)
         {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Kho phân bón không đủ！").button("Xác nhận", true).show(playScreen.getStage());
+            new Dialog("",playScreen.getSkin(),"dialog").text("Trong túi có đủ phân bón đâu mà bón =))").button("Xác nhận", true).show(playScreen.getStage());
 
         }
         else {
@@ -231,16 +225,13 @@ public class LandView extends Actor{
         if(!land.isSeedable()){
             new Dialog("",playScreen.getSkin(),"dialog").text("Đất đã được gieo hạt rồi!").button("Xác nhận", true).show(playScreen.getStage());
         }
-        else if(!playScreen.getUser().isActable(3))
-        {
-            new Dialog("",playScreen.getSkin(),"dialog").text("Không đủ thể lực để thực hiện thao tác!").button("Xác nhận", true).show(playScreen.getStage());
-
+        else if(!playScreen.getUser().isActable(3)){
+            new Dialog("",playScreen.getSkin(),"dialog").text("Đang mệt không gieo hạt được đâu!").button("Xác nhận", true).show(playScreen.getStage());
         }
 
 
         else {
-            if(playScreen.getCropArray().get(cropID).getCropNumber()>0)
-            {
+            if(playScreen.getCropArray().get(cropID).getCropNumber()>0){
                 playScreen.game.gamemusic.setSeedSoundPlaying();
                 playScreen.getUser().setExp(playScreen.getUser().getExp()+4);
                 playScreen.getUser().setHp(playScreen.getUser().getHp()-3);
@@ -256,7 +247,6 @@ public class LandView extends Actor{
             else
                 new Dialog("",playScreen.getSkin(),"dialog").text(playScreen.getCropArray().get(cropID).getName()+" không đủ trong kho!").button("Xác nhận", true).show(playScreen.getStage());
         }
-
     }
 
     public void loadLandData(){
@@ -289,14 +279,12 @@ public class LandView extends Actor{
         land.setGrowTime(0);
         noWateredTime=0;
         land.setWaterTime(0);
-
     }
-    public void checkWater(){
 
+    public void checkWater(){
     }
 
     public void grow(){
-
         if(land.isWatered())
             noWateredTime=0;
         else
@@ -308,8 +296,7 @@ public class LandView extends Actor{
             cropTexture=new Texture(crop.getCropEndPic());
         }
 
-        if(land.getNowStage()==crop.getStageCount())//Khi cây đạt đến giai đoạn cuối, có thể thu hoạch
-        {
+        if(land.getNowStage()==crop.getStageCount()){//Khi cây đạt đến giai đoạn cuối, có thể thu hoạch
             land.setPickable(true);
             land.setFruitNum(MathUtils.random(10, 20));
             if(land.isFertilized())// Nếu bón phân, sản lượng sẽ gấp đôi
@@ -318,15 +305,13 @@ public class LandView extends Actor{
             }
         }
 
-        if(!land.isPickable()&&!land.isPerished()){//Cây vẫn chưa chín và chưa chết
+        if(!land.isPickable()&&!land.isPerished()){//Khi cây vẫn chưa chín và chưa chết
             if(land.isWatered())//Nếu được tưới, tăng thời gian sinh trưởng
-                land.setGrowTime(land.getGrowTime()+Gdx.graphics.getDeltaTime() * playScreen.getWorldTime().getTimeRatio());
-            if(land.getGrowTime()>(land.getNowStage()+1)*crop.getUnitTime()*1800)
-            {
-                land.setNowStage(land.getNowStage()+1);
-                cropTexture=new Texture(crop.getNowStagePic(land.getNowStage()));
+                land.setGrowTime(land.getGrowTime()+Gdx.graphics.getDeltaTime() * playScreen.getWorldTime().getTimeRatio()); //Thời gian tăng trưởng tăng theo thời gian thực
+            if(land.getGrowTime()>(land.getNowStage()+1)*crop.getUnitTime()*1800){ //Khi thời gian tăng trưởng vượt quá thời gian tăng trưởng của giai đoạn hiện tại, chuyển sang giai đoạn tiếp theo
+                land.setNowStage(land.getNowStage()+1);// Tăng giai đoạn
+                cropTexture=new Texture(crop.getNowStagePic(land.getNowStage())); //Thay đổi ảnh cây trồng
             }
-
         }
     }
 

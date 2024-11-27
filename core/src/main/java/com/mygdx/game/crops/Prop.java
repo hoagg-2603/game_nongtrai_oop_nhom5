@@ -2,12 +2,11 @@ package com.mygdx.game.crops;
 
 public class Prop {
 	//Lưu trữ trông tin phần thiết bị
-
-	private int propId;// id
-	private String name;// Tên thiết bị
-	private String pic;// ảnh thiết bị
-	private double propPrice;// Đơn mua
-	private int buyLevel;// Level mua
+	private int propId; // id thiết bị
+	private String name; // Tên thiết bị
+	private String pic; // ảnh thiết bị
+	private double propPrice; // Đơn mua
+	private int buyLevel; // Level mua
 
 	public int getPropId() {
 		return propId;
@@ -92,8 +91,4 @@ public class Prop {
      public Prop() {
     	 super();
      }
-
-
-
-
 }

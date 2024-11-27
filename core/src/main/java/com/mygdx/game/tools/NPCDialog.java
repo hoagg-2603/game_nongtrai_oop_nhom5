@@ -128,7 +128,7 @@ public class NPCDialog {
 						}
 					}
 				};
-				dialogOfSecurityGuard2.text("Được rồi, bây giờ bạn có thể tự do ra vào！");
+				dialogOfSecurityGuard2.text("Được rồi, bây giờ bạn có thể tự do ra vào!");
 				dialogOfSecurityGuard2.button("Kết thúc đối thoại", true);
 			}
 			break;
