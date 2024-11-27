@@ -43,7 +43,7 @@ public class LoginScreen implements Screen {
 
 		//Khởi tạo các UI
 		background = new Image(new Texture("../assets/image/background/background.png"));
-		background.setSize(1600, 900);
+		background.setSize(1600, 1000);
 		registerUI = new RegisterUI(skin);
 		loginUI = new LoginUI(skin);
 

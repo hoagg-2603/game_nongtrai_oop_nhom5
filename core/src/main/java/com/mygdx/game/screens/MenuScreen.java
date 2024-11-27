@@ -48,7 +48,7 @@ public class MenuScreen implements Screen {
         stage = new Stage();
         table = new Table();
         background=new Image(new Texture(Gdx.files.internal("../assets/image/background/menubackground.jpg")));
-        background.setSize(1600, 900);
+        background.setSize(1600, 1000);
         //Thiết lập văn bản và định dạng cho các nút
         returnButton = new TextButton("Chuyển tài khoản",skin);
         startButton = new TextButton("Bắt đầu trò chơi",skin);
