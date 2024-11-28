@@ -18,7 +18,7 @@ import com.mygdx.game.screens.PlayScreen;
 public class LandView extends Actor{
     //Lớp để hiển thị trực quan đất
     private Land land; //Dữ liệu đất
-    private PlayScreen playScreen; 
+    private PlayScreen playScreen;
     private Crop crop; //Dữ liệu cây trồng trên đất
     private Texture landTexture; // Ảnh nền đất
     private Texture cropTexture; // Ảnh cây trồng, thay đổi tùy theo tình trạng trồng trên đất

@@ -20,18 +20,16 @@ import com.mygdx.game.crops.User;
 import com.mygdx.game.screens.PlayScreen;
 
 public class SlotUI extends Table{
-	// Ô nhỏ trên ba lô, kho lưu trữ
-	private Texture texture;//Kết cấu, dùng để lưu trữ hình ảnh
-	private float width,height;//Để lưu trữ chiều dài và chiều rộng của bảng
-	private InputWindow inputWindow;//Cửa sổ nhập
-	private Crop crop=null;
-	private Fruit fruit=null;
-	private Prop prop=null;
-	private Label seedNumberLabel;
-	private Label fruitNumberLabel;
-	private Label propNumberLabel;
-	private Pixmap pm;//Lưu trữ hình ảnh con trỏ
-
+	private Texture texture; // Kết cấu, dùng để lưu trữ hình ảnh
+	private float width,height;// Để lưu trữ chiều dài và chiều rộng của bảng
+	private InputWindow inputWindow;// Cửa sổ nhập số lượng mua
+	private Crop crop=null; // Lưu trữ thông tin cây trồng
+	private Fruit fruit=null; // Lưu trữ thông tin quả
+	private Prop prop=null; // Lưu trữ thông tin đạo cụ
+	private Label seedNumberLabel; // Nhãn số lượng hạt giống
+	private Label fruitNumberLabel; // Nhãn số lượng quả 
+	private Label propNumberLabel; // Nhãn số lượng đạo cụ
+	private Pixmap pm; // Lưu trữ hình ảnh con trỏ
 	
     public SlotUI(Crop crop, User user, PackageUI bag, Stage stage, Skin skin, String type){
 	//Constructor 1: Khởi tạo slot cho hạt giống

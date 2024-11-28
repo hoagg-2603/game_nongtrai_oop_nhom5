@@ -23,30 +23,29 @@ import com.mygdx.game.crops.User;
 
 
 public class PackageUI extends Window{
-	// Giao diện Ba Lô
-
-       private Texture texture;//Kết cấu
-       private TextureRegion region;//Cắt một phần của kết cấu
-       private TextureRegionDrawable windowdrable;//Nền cửa sổ Ba Lô
-       private TextButton seedButton;
-       private TextButton propButton;
-       private TextButton fruitButton;
-       private ImageButton leftButton;
-       private ImageButton rightButton;
-       private ImageButton closeButton;
-       private Label titleLabel;
-       private Table seedTable1;// Trang đầu của Hạt Giống trong Ba Lô
-       private Table seedTable2;//Trang thứ hai của Hạt Giống trong Ba Lô
-       private Table propTable;//Trang Đạo Cụ trong Ba Lô
-       private Table fruitTable1;//Trang đầu của Trái Cây trong Ba Lô
-       private Table fruitTable2;//Trang thứ hai của Trái Cây trong Ba Lô
-       private SlotUI[] bagSeedTable;//Các ô Hạt Giống
-       private SlotUI[] bagPropTable;//Các ô Đạo Cụ
-       private SlotUI[] bagFruitTable;//Các ô Trái Cây
-       private Array<Crop> cropArray;
-       private Array<Prop> propArray;
-       private Array<Fruit> fruitArray;
-	   private float x,y;
+	private Texture texture;//Kết cấu của cửa sổ
+    private TextureRegion region;// Cắt kết cấu để đặt hình nền cửa sổ
+    private TextureRegionDrawable windowdrable;// Dùng để đặt hình nền cửa sổ
+    private TextButton seedButton; // Nút điều hướng loại hạt giống
+    private TextButton propButton; // Nút điều hướng loại đạo cụ
+    private TextButton fruitButton; // Nút điều hướng loại trái cây
+    private ImageButton leftButton; // Biểu tượng chuyển trang trái
+    private ImageButton rightButton; // Biểu tượng chuyển trang phải
+    private ImageButton closeButton; // Nút đóng cửa sổ
+    private Label titleLabel; // Nhãn tên cửa sổ túi đồ
+    private Table seedTable1; // Trang 1 của túi hạt giống trong túi đồ 
+    private Table seedTable2; // Trang 2 của túi hạt giống trong túi đồ
+    private Table propTable; // Trang đạo cụ trong túi đồ 
+    private Table fruitTable1; // Trang 1 của túi trái cây trong túi đồ
+    private Table fruitTable2; // Trang 2 của túi trái cây trong túi đồ
+    private SlotUI[] bagSeedTable; // Các loại hạt giống trong túi đồ
+    private SlotUI[] bagPropTable; // Các loại đạo cụ trong túi đồ
+    private SlotUI[] bagFruitTable; // Các loại trái cây trong túi đồ
+    private Array<Crop> cropArray; // Mảng chứa các loại hạt giống
+    private Array<Prop> propArray; // Mảng chứa các loại đạo cụ
+    private Array<Fruit> fruitArray; // Mảng chứa các loại trái cây
+	private float x,y;
+       
 
 		 public PackageUI(Array<Crop> cropArray, Array<Prop> propArray, Array<Fruit> fruitArray, User user, Stage stage, Skin skin) {
 			super("", skin);
@@ -61,7 +60,7 @@ public class PackageUI extends Window{
 			windowdrable=new TextureRegionDrawable(region);
 			this.setBackground(windowdrable);
 
-			titleLabel=new Label("Ba Lô",skin,"title");
+			titleLabel=new Label("Túi đồ",skin,"title");
 		    this.addActor(titleLabel);
 		    titleLabel.setColor(Color.BLACK);
 

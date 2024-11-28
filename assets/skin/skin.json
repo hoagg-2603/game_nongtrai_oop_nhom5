@@ -149,7 +149,6 @@
       "up": "button1",
       "down": "button2",
       "over": "button3"
-
     }
   },
   "com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {

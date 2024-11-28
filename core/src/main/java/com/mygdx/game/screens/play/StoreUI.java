@@ -46,16 +46,18 @@ public class StoreUI extends Window{
         seedTable2=new Table();
 		propTable=new Table();
 
-		storeSeedTable=new SlotUI[cropArray.size];
-	    for(int j=0;j<storeSeedTable.length;j++){// Tạo slot cho từng loại hạt giống trong cửa hàng và đưa đối tượng vào stage
+		storeSeedTable=new SlotUI[cropArray.size]; // Khai báo mảng slot hạt giống
+		// Tạo slot cho từng loại hạt giống trong cửa hàng và đưa đối tượng vào stage
+	    for(int j=0;j<storeSeedTable.length;j++){
 	        storeSeedTable[j]=new SlotUI(cropArray.get(j),user,bag,stage,skin,"storeSeed");
-	        stage.addActor(storeSeedTable[j].getInputWindow());
+	        stage.addActor(storeSeedTable[j].getInputWindow()); // Đưa slot vào stage
 	    }
 
-	    storePropTable=new SlotUI[propArray.size];
-	    for(int i=0;i<propArray.size;i++){//Tạo slot cho từng loại đạo cụ trong cửa hàng và đưa đối tượng vào stage
+	    storePropTable=new SlotUI[propArray.size]; // Khai báo mảng slot đạo cụ
+		//Tạo slot cho từng loại đạo cụ trong cửa hàng và đưa đối tượng vào stage
+	    for(int i=0;i<propArray.size;i++){
 	        storePropTable[i]=new SlotUI(propArray.get(i),user,bag,stage,skin,"storeProp",true);
-	        stage.addActor(storePropTable[i].getInputWindow());
+	        stage.addActor(storePropTable[i].getInputWindow());	// Đưa slot vào stage
 	    }
 
 	    for(int i=0;i<storeSeedTable.length;i++){//Sắp xếp các slot hạt giống trên từng trang của cửa hàng
@@ -76,8 +78,8 @@ public class StoreUI extends Window{
 
 		texture=new Texture(Gdx.files.internal("../assets/image/background/store.png")); // Nhập hình ảnh, đặt hình nền của cửa sổ
 		region=new TextureRegion(texture,0,0,748,645);
-		windowdrable=new TextureRegionDrawable(region);
-		this.setBackground(windowdrable);
+		windowdrable=new TextureRegionDrawable(region); // Đặt hình nền của cửa sổ
+		this.setBackground(windowdrable); // Đặt hình nền của cửa sổ
 
 
 	    titleLabel=new Label("Cửa hàng",skin,"title");//Đặt tiêu đề của cửa sổ
